@@ -1,0 +1,24 @@
+PODS:
+  - ReactorKit (2.1.0):
+    - RxSwift (~> 5.0)
+    - WeakMapTable (~> 1.1)
+  - RxSwift (5.1.1)
+  - WeakMapTable (1.1.0)
+
+DEPENDENCIES:
+  - ReactorKit
+
+SPEC REPOS:
+  trunk:
+    - ReactorKit
+    - RxSwift
+    - WeakMapTable
+
+SPEC CHECKSUMS:
+  ReactorKit: 12a93358c554bb3f167b16b14c40374fa9cd5acd
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  WeakMapTable: d0327eda092be6a8f7c532942ae98dc7948f5d32
+
+PODFILE CHECKSUM: 9562970a5488e6c83389aecc6977eeba880ed242
+
+COCOAPODS: 1.9.1

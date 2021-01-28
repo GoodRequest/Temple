@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="W06-Ve-uHX" customClass="___VARIABLE_ID___CollectionViewCell" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" collectionViewCell="W06-Ve-uHX" id="beN-i8-uJ8">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                  <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jXk-99-gDr" customClass="___VARIABLE_ID___View" customModuleProvider="target">
+                    <rect key="frame" x="0" y="-0" width="414" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                  </view>
+                </subviews>
+                <constraints>
+                  <constraint firstItem="jXk-99-gDr" firstAttribute="top" secondItem="beN-i8-uJ8" secondAttribute="top" id="76B-gF-Tzg"/>
+                  <constraint firstAttribute="bottom" secondItem="jXk-99-gDr" secondAttribute="bottom" id="btd-jj-D3h"/>
+                  <constraint firstAttribute="trailing" secondItem="jXk-99-gDr" secondAttribute="trailing" id="vAt-Gr-aCl"/>
+                  <constraint firstItem="jXk-99-gDr" firstAttribute="leading" secondItem="beN-i8-uJ8" secondAttribute="leading" id="y5m-G7-NQJ"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <connections>
+              <outlet property="contentXib" destination="jXk-99-gDr" id="lbD-MV-uv8"/>
+            </connections>
+            <point key="canvasLocation" x="-561" y="153"/>
+        </collectionViewCell>
+    </objects>
+</document>

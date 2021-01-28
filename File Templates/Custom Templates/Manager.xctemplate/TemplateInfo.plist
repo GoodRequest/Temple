@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
+	<key>Platforms</key>
+	<array>
+		<string>com.apple.platform.iphoneos</string>
+	</array>
+	<key>Options</key>
+	<array>
+
+		<dict>
+			<key>Identifier</key>
+			<string>ID</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>Manager Name</string>
+			<key>Description</key>
+			<string>The name of the Manager to create</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Default</key>
+			<string>MyAny+(Manager)</string>
+			<key>NotPersisted</key>
+			<true/>
+			<key>Nodes</key>
+			<array>
+				<string>Base</string>
+			</array>
+		</dict>
+
+		<dict>
+			<key>Identifier</key>
+			<string>VAR</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>VariableName</string>
+			<key>Description</key>
+			<string>The name of the variable when using the dependency</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Default</key>
+			<string>myAny+(Manager)</string>
+			<key>NotPersisted</key>
+			<true/>
+			<key>Nodes</key>
+			<array>
+				<string>Base</string>
+			</array>
+		</dict>
+
+		<dict/>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>com.apple.dt.unit.singleViewApplication</string>
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.coreDataCocoaTouchApplication</string>
+		<string>com.apple.dt.unit.sceneLifecycleApplication</string>
+	</array>
+	<key>Concrete</key>
+	<true/>
+	<key>Description</key>
+	<string>This template provides a starting point for an application that uses a single view. It provides a view controller to manage the view, and a storyboard or nib file that contains the view.</string>
+	<key>SortOrder</key>
+	<integer>1</integer>
+	<key>NameOfInitialFileForEditor</key>
+	<string>ContentView.swift</string>
+
+	<key>Definitions</key>
+	<dict>
+
+		<key>Application/AppConfig.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Application/AppConfig.swift</string>
+			<key>Group</key>
+			<array>
+				<string>Application</string>
+			</array>
+		</dict>
+
+		<key>Documentation/README.md</key>
+		<dict>
+			<key>Path</key>
+			<string>Documentation/README.md</string>
+			<key>Group</key>
+			<array>
+				<string>Documentation</string>
+			</array>
+		</dict>
+
+	<key>README.m</key>
+	<dict>
+		<key>Path</key>
+		<string>Supporting Files/Documentation/README.md</string>
+		<key>Group</key>
+		<array>
+			<string>Supporting Files</string>
+			<string>Documentation</string>
+		</array>
+	</dict>
+
+	</dict>
+	<key>Options</key>
+	<array>
+
+		<dict>
+			<key>Identifier</key>
+			<string>ID</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>Base Name</string>
+			<key>Description</key>
+			<string>The name of the Model, View and ViewModel to create</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Default</key>
+			<string>MyModel</string>
+			<key>NotPersisted</key>
+			<true/>
+			<key>Nodes</key>
+			<array>
+				<string>Base</string>
+			</array>
+		</dict>
+
+		<dict>
+			<key>Identifier</key>
+			<string>languageChoice</string>
+			<key>Units</key>
+			<dict>
+				<key>Swift</key>
+				<array>
+					<dict>
+						<key>RequiredOptions</key>
+						<dict>
+							<key>userInterface</key>
+							<string>Storyboard</string>
+						</dict>
+						<!-- <key>Group</key>
+						<array>
+							<string>Application</string>
+							<string>Extension</string>
+							<string>Model</string>
+							<string>Screen</string>
+							<string>Component</string>
+							<string>Manager</string>
+						</array> -->
+						<key>Nodes</key>
+						<array>
+							<string>Application/AppConfig.swift</string>
+							<string>Documentation/README.md</string>
+							<string>README.m</string>
+							<string>ViewController.swift:comments</string>
+							<string>ViewController.swift:imports:importCocoa</string>
+							<string>ViewController.swift:implementation(___FILEBASENAME___: UIViewController)</string>
+							<string>ViewController.swift:implementation:methods:viewDidLoad(override func viewDidLoad(\))</string>
+							<string>ViewController.swift:implementation:methods:viewDidLoad:super</string>
+							<string>Info.plist:UIMainStoryboardFile</string>
+							<string>Info.plist:UIApplicationSceneManifest:UISceneStoryboardFile</string>
+							<string>Base.lproj/Main.storyboard</string>
+						</array>
+						<key>Definitions</key>
+						<dict>
+							<key>Base.lproj/Main.storyboard</key>
+							<dict>
+								<key>Path</key>
+								<string>Main.storyboard</string>
+								<key>SortOrder</key>
+								<integer>98</integer>
+							</dict>
+							<key>Info.plist:UIMainStoryboardFile</key>
+							<string>&lt;key&gt;UIMainStoryboardFile&lt;/key&gt;
+								&lt;string&gt;Main&lt;/string&gt;
+							</string>
+						</dict>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>userInterface</string>
+			<key>Name</key>
+			<string>Interface:</string>
+			<key>Description</key>
+			<string>The type of user interface.</string>
+			<key>Values</key>
+			<array>
+				<string>Storyboard</string>
+			</array>
+			<key>Default</key>
+			<string>Storyboard</string>
+			<key>Type</key>
+			<string>popup</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,24 @@
+excluded:
+  - Tester
+
+disabled_rules:
+  - identifier_name
+  - valid_docs
+  - type_name
+
+analyzer_rules: # Rules run by `swiftlint analyze` (experimental)
+- explicit_self
+
+file_length:
+  warning: 550
+  error: 1200
+
+line_length: 200
+cyclomatic_complexity: 12
+function_body_length: 80
+function_parameter_count: 5
+type_body_length: 300
+
+# // swiftlint:disable <rule1>
+# // swiftlint:enable <rule1>
+
