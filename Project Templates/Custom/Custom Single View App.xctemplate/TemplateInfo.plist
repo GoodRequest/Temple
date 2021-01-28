@@ -33,26 +33,114 @@
 			</array>
 		</dict>
 
-		<key>Documentation/README.md</key>
+		<key>Application/AppDelegate.swift</key>
 		<dict>
 			<key>Path</key>
-			<string>Documentation/README.md</string>
+			<string>Application/AppDelegate.swift</string>
 			<key>Group</key>
 			<array>
-				<string>Documentation</string>
+				<string>Application</string>
 			</array>
 		</dict>
 
-	<key>README.m</key>
-	<dict>
-		<key>Path</key>
-		<string>Supporting Files/Documentation/README.md</string>
-		<key>Group</key>
-		<array>
-			<string>Supporting Files</string>
-			<string>Documentation</string>
-		</array>
-	</dict>
+		<key>Model/Response/SampleResponse.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Model/Response/SampleResponse.swift</string>
+			<key>Group</key>
+			<array>
+				<string>Model</string>
+				<string>Response</string>
+			</array>
+		</dict>
+
+		<key>Model/Request/SampleRequest.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Model/Request/SampleRequest.swift</string>
+			<key>Group</key>
+			<array>
+				<string>Model</string>
+				<string>Request</string>
+			</array>
+		</dict>
+
+		<key>Screen/SampleController/SampleViewController.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Screen/SampleController/SampleViewController.swift</string>
+			<key>Group</key>
+			<array>
+				<string>Screen</string>
+				<string>SampleController</string>
+			</array>
+		</dict>
+
+		<key>View/SampleView/SampleView.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>View/SampleView/SampleView.swift</string>
+			<key>Group</key>
+			<array>
+				<string>View</string>
+				<string>SampleView</string>
+			</array>
+		</dict>
+
+		<key>Manager/Request/RequestManager.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Manager/Request/RequestManager.swift</string>
+			<key>Group</key>
+			<array>
+				<string>Manager</string>
+				<string>Request</string>
+			</array>
+		</dict>
+
+		<key>Manager/Request/RequestManagerType.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Manager/Request/RequestManagerType.swift</string>
+			<key>Group</key>
+			<array>
+				<string>Manager</string>
+				<string>Request</string>
+			</array>
+		</dict>
+
+		<key>Manager/Request/Endpoint.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Manager/Request/Endpoint.swift</string>
+			<key>Group</key>
+			<array>
+				<string>Manager</string>
+				<string>Request</string>
+			</array>
+		</dict>
+
+		<key>Extension/UIKit/UIView.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Extension/UIKit/UIView.swift</string>
+			<key>Group</key>
+			<array>
+				<string>Extension</string>
+				<string>UIKit</string>
+			</array>
+		</dict>
+
+		<key>Extension/Foundation/String.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Extension/Foundation/String.swift</string>
+			<key>Group</key>
+			<array>
+				<string>Extension</string>
+				<string>Foundation</string>
+			</array>
+		</dict>
 
 	</dict>
 	<key>Options</key>
@@ -94,18 +182,22 @@
 						</dict>
 						<!-- <key>Group</key>
 						<array>
-							<string>Application</string>
 							<string>Extension</string>
-							<string>Model</string>
-							<string>Screen</string>
-							<string>Component</string>
-							<string>Manager</string>
 						</array> -->
 						<key>Nodes</key>
 						<array>
+							<string>Application/AppDelegate.swift</string>
 							<string>Application/AppConfig.swift</string>
-							<string>Documentation/README.md</string>
-							<string>README.m</string>
+							<string>Model/Response/SampleResponse.swift</string>
+							<string>Model/Request/SampleRequest.swift</string>
+							<string>Screen/SampleController/SampleViewController.swift</string>
+							<string>View/SampleView/SampleView.swift</string>
+							<string>Manager/Request/RequestManager.swift</string>
+							<string>Manager/Request/RequestManagerType.swift</string>
+							<string>Manager/Request/Endpoint.swift</string>
+							<string>Extension/UIKit/UIView.swift</string>
+							<string>Extension/Foundation/String.swift</string>
+
 							<string>ViewController.swift:comments</string>
 							<string>ViewController.swift:imports:importCocoa</string>
 							<string>ViewController.swift:implementation(___FILEBASENAME___: UIViewController)</string>
