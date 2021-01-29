@@ -8,8 +8,7 @@
 	<string>com.apple.dt.unit.singleViewApplication</string>
 	<key>Ancestors</key>
 	<array>
-		<string>com.apple.dt.unit.coreDataCocoaTouchApplication</string>
-		<string>com.apple.dt.unit.sceneLifecycleApplication</string>
+		<string>com.goodrequest.CocoaPods</string>
 	</array>
 	<key>Concrete</key>
 	<true/>
@@ -19,10 +18,24 @@
 	<integer>1</integer>
 	<key>NameOfInitialFileForEditor</key>
 	<string>ContentView.swift</string>
-
 	<key>Definitions</key>
 	<dict>
-
+		<key>../___PACKAGENAME___.xcodeproj/project.pbxproj</key>
+		<dict/>
+		<key>Path</key>
+		<string>project.pbxproj</string>
+		<key>../___PACKAGENAME___.xcodeproj/xcuserdata/___USERNAME___.xcuserdatad/xcschemes/xcschememanagement.plist</key>
+		<dict/>
+		<key>../___PACKAGENAME___.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved</key>
+		<dict>
+			<key>Path</key>
+			<string>Package.resolved</string>
+		</dict>
+		<key>../___PACKAGENAME___.xcworkspace/xcshareddata/swiftpm/Package.resolved</key>
+		<dict>
+			<key>Path</key>
+			<string>Package.resolved</string>
+		</dict>
 		<key>Application/AppConfig.swift</key>
 		<dict>
 			<key>Path</key>
@@ -32,7 +45,6 @@
 				<string>Application</string>
 			</array>
 		</dict>
-
 		<key>Application/AppDelegate.swift</key>
 		<dict>
 			<key>Path</key>
@@ -42,7 +54,6 @@
 				<string>Application</string>
 			</array>
 		</dict>
-
 		<key>Model/Response/SampleResponse.swift</key>
 		<dict>
 			<key>Path</key>
@@ -53,7 +64,6 @@
 				<string>Response</string>
 			</array>
 		</dict>
-
 		<key>Model/Request/SampleRequest.swift</key>
 		<dict>
 			<key>Path</key>
@@ -64,7 +74,6 @@
 				<string>Request</string>
 			</array>
 		</dict>
-
 		<key>Screen/SampleController/SampleViewController.swift</key>
 		<dict>
 			<key>Path</key>
@@ -75,7 +84,6 @@
 				<string>SampleController</string>
 			</array>
 		</dict>
-
 		<key>View/SampleView/SampleView.swift</key>
 		<dict>
 			<key>Path</key>
@@ -86,7 +94,6 @@
 				<string>SampleView</string>
 			</array>
 		</dict>
-
 		<key>Manager/Request/RequestManager.swift</key>
 		<dict>
 			<key>Path</key>
@@ -97,7 +104,6 @@
 				<string>Request</string>
 			</array>
 		</dict>
-
 		<key>Manager/Request/RequestManagerType.swift</key>
 		<dict>
 			<key>Path</key>
@@ -108,7 +114,6 @@
 				<string>Request</string>
 			</array>
 		</dict>
-
 		<key>Manager/Request/Endpoint.swift</key>
 		<dict>
 			<key>Path</key>
@@ -119,7 +124,6 @@
 				<string>Request</string>
 			</array>
 		</dict>
-
 		<key>Extension/UIKit/UIView.swift</key>
 		<dict>
 			<key>Path</key>
@@ -130,7 +134,6 @@
 				<string>UIKit</string>
 			</array>
 		</dict>
-
 		<key>Extension/Foundation/String.swift</key>
 		<dict>
 			<key>Path</key>
@@ -141,11 +144,27 @@
 				<string>Foundation</string>
 			</array>
 		</dict>
-
 	</dict>
+
+	<key>Nodes</key>
+	<array>
+		<string>Application/AppDelegate.swift</string>
+		<string>Application/AppConfig.swift</string>
+		<string>Model/Response/SampleResponse.swift</string>
+		<string>Model/Request/SampleRequest.swift</string>
+		<string>Screen/SampleController/SampleViewController.swift</string>
+		<string>View/SampleView/SampleView.swift</string>
+		<string>Manager/Request/RequestManager.swift</string>
+		<string>Manager/Request/RequestManagerType.swift</string>
+		<string>Manager/Request/Endpoint.swift</string>
+		<string>Extension/UIKit/UIView.swift</string>
+		<string>Extension/Foundation/String.swift</string>
+		<string>Info.plist:UIMainStoryboardFile</string>
+		<string>Info.plist:UIApplicationSceneManifest:UISceneStoryboardFile</string>
+	</array>
+
 	<key>Options</key>
 	<array>
-
 		<dict>
 			<key>Identifier</key>
 			<string>ID</string>
@@ -161,85 +180,6 @@
 			<string>MyModel</string>
 			<key>NotPersisted</key>
 			<true/>
-			<key>Nodes</key>
-			<array>
-				<string>Base</string>
-			</array>
-		</dict>
-
-		<dict>
-			<key>Identifier</key>
-			<string>languageChoice</string>
-			<key>Units</key>
-			<dict>
-				<key>Swift</key>
-				<array>
-					<dict>
-						<key>RequiredOptions</key>
-						<dict>
-							<key>userInterface</key>
-							<string>Storyboard</string>
-						</dict>
-						<!-- <key>Group</key>
-						<array>
-							<string>Extension</string>
-						</array> -->
-						<key>Nodes</key>
-						<array>
-							<string>Application/AppDelegate.swift</string>
-							<string>Application/AppConfig.swift</string>
-							<string>Model/Response/SampleResponse.swift</string>
-							<string>Model/Request/SampleRequest.swift</string>
-							<string>Screen/SampleController/SampleViewController.swift</string>
-							<string>View/SampleView/SampleView.swift</string>
-							<string>Manager/Request/RequestManager.swift</string>
-							<string>Manager/Request/RequestManagerType.swift</string>
-							<string>Manager/Request/Endpoint.swift</string>
-							<string>Extension/UIKit/UIView.swift</string>
-							<string>Extension/Foundation/String.swift</string>
-
-							<string>ViewController.swift:comments</string>
-							<string>ViewController.swift:imports:importCocoa</string>
-							<string>ViewController.swift:implementation(___FILEBASENAME___: UIViewController)</string>
-							<string>ViewController.swift:implementation:methods:viewDidLoad(override func viewDidLoad(\))</string>
-							<string>ViewController.swift:implementation:methods:viewDidLoad:super</string>
-							<string>Info.plist:UIMainStoryboardFile</string>
-							<string>Info.plist:UIApplicationSceneManifest:UISceneStoryboardFile</string>
-							<string>Base.lproj/Main.storyboard</string>
-						</array>
-						<key>Definitions</key>
-						<dict>
-							<key>Base.lproj/Main.storyboard</key>
-							<dict>
-								<key>Path</key>
-								<string>Main.storyboard</string>
-								<key>SortOrder</key>
-								<integer>98</integer>
-							</dict>
-							<key>Info.plist:UIMainStoryboardFile</key>
-							<string>&lt;key&gt;UIMainStoryboardFile&lt;/key&gt;
-								&lt;string&gt;Main&lt;/string&gt;
-							</string>
-						</dict>
-					</dict>
-				</array>
-			</dict>
-		</dict>
-		<dict>
-			<key>Identifier</key>
-			<string>userInterface</string>
-			<key>Name</key>
-			<string>Interface:</string>
-			<key>Description</key>
-			<string>The type of user interface.</string>
-			<key>Values</key>
-			<array>
-				<string>Storyboard</string>
-			</array>
-			<key>Default</key>
-			<string>Storyboard</string>
-			<key>Type</key>
-			<string>popup</string>
 		</dict>
 	</array>
 </dict>

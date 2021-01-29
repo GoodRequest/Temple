@@ -1,0 +1,8 @@
+platform :ios, '13.0'
+
+target '___PACKAGENAME___' do
+  use_frameworks!
+
+  pod 'SwiftGen'
+  
+end
