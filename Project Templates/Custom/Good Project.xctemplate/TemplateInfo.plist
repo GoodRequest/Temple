@@ -134,6 +134,25 @@
 				<string>UIKit</string>
 			</array>
 		</dict>
+		<key>Resource/Assets.xcassets</key>
+		<dict>
+			<key>Path</key>
+			<string>Resource/Assets.xcassets</string>
+			<key>Group</key>
+			<array>
+				<string>Resource</string>
+			</array>
+		</dict>
+
+		<key>Resource/Colors.xcassets</key>
+		<dict>
+			<key>Path</key>
+			<string>Resource/Colors.xcassets</string>
+			<key>Group</key>
+			<array>
+				<string>Resource</string>
+			</array>
+		</dict>
 		<key>Extension/Foundation/String.swift</key>
 		<dict>
 			<key>Path</key>
@@ -158,6 +177,8 @@
 		<string>Manager/Request/RequestManagerType.swift</string>
 		<string>Manager/Request/Endpoint.swift</string>
 		<string>Extension/UIKit/UIView.swift</string>
+		<string>Resource/Colors.xcassets</string>
+		<string>Resource/Assets.xcassets</string>
 		<string>Extension/Foundation/String.swift</string>
 		<string>Info.plist:UIMainStoryboardFile</string>
 		<string>Info.plist:UIApplicationSceneManifest:UISceneStoryboardFile</string>
