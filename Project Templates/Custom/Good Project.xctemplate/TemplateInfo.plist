@@ -8,6 +8,7 @@
 	<string>com.apple.dt.unit.singleViewApplication</string>
 	<key>Ancestors</key>
 	<array>
+		<string>com.goodrequest.cocoaTouchApplicationBase</string>
 		<string>com.goodrequest.CocoaPods</string>
 	</array>
 	<key>Concrete</key>
