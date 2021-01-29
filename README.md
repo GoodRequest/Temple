@@ -1,4 +1,4 @@
-Xcode templates 
+# 🕍 Xcode templates 
 
 If you are like me you love writing iOS code but there is nothing that breaks your creativity more than boilerplate code and having to think about it while some other more creative solutions might reside in your mind at the same time. Even if you have a pretty good idea about your architecture it is surely a waste of time to write boilerplate since it’s just repeating code. All you need is a bunch of good templates and writing code in any architecture should be easier for you as well and easier to get into for new members of the team. But it has a catch. Xcode templates aren’t exactly what you would call a well-documented part of the tool. That is why I decided to bring you through the process of building these from scratch to save you the trouble I went through with collecting the knowledge on this subject.
 Writing templates has these advantages:
