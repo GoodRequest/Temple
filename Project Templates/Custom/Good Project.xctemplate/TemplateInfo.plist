@@ -163,6 +163,18 @@
 				<string>Resource</string>
 			</array>
 		</dict>
+		<key>../swiftgen.yml</key>
+		<dict>
+			<key>Group</key>
+			<string>Resource</string>
+			<key>Path</key>
+			<string>swiftgen.yml</string>
+		</dict>
+		<key>../.swiftlint.yml</key>
+		<dict>
+			<key>Group</key>
+			<string>Resource</string>
+		</dict>
 	</dict>
 	<key>Nodes</key>
 	<array>
@@ -176,9 +188,11 @@
 		<string>Manager/Request/RequestManagerType.swift</string>
 		<string>Manager/Request/Endpoint.swift</string>
 		<string>Extension/UIKit/UIView.swift</string>
+		<string>Extension/Foundation/String.swift</string>
 		<string>Resource/Colors.xcassets</string>
 		<string>Resource/Assets.xcassets</string>
-		<string>Extension/Foundation/String.swift</string>
+		<string>../swiftgen.yml</string>
+		<string>../.swiftlint.yml</string>
 		<string>Info.plist:UIMainStoryboardFile</string>
 		<string>Info.plist:UIApplicationSceneManifest:UISceneStoryboardFile</string>
 	</array>
