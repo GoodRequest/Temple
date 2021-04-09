@@ -30,14 +30,6 @@ final class ___VARIABLE_ID___Coordinator: Coordinator<AppStep> {
         self.parentCoordinator = parentCoordinator
     }
 
-    // MARK: - Public
-
-    override func navigate(to step: AppStep) -> StepAction {
-        switch step {
-        default: return .none
-        }
-    }
-
     // MARK: - Override
 
     override func start() -> UIViewController? {
@@ -51,6 +43,14 @@ final class ___VARIABLE_ID___Coordinator: Coordinator<AppStep> {
         )
 
         return ___VARIABLE_VarID___Controller
+    }
+
+    // MARK: - Public
+
+    override func navigate(to step: AppStep) -> StepAction {
+        switch step {
+        default: return .none
+        }
     }
 
 }

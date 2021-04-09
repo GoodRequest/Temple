@@ -3,8 +3,6 @@
 import Foundation
 import Combine
 import GoodReactor
-import GoodStructs
-import GoodCombineExtensions
 
 // MARK: - View Model Implementation
 
@@ -38,7 +36,7 @@ final class ___VARIABLE_ID___ViewModel: GoodReactor {
     init(di: DI, coordinator: Coordinator<AppStep>) {
         self.di = di
         self.coordinator = coordinator
-        self.state = State()
+        self.initialState = State()
     }
 
 }
