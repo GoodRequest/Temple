@@ -10,7 +10,6 @@
 	</array>
 	<key>Options</key>
 	<array>
-
 		<dict>
 			<key>Identifier</key>
 			<string>ID</string>
@@ -31,8 +30,26 @@
 				<string>Base</string>
 			</array>
 		</dict>
-
-		<dict/>
+		<dict>
+			<key>Identifier</key>
+			<string>VarID</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>Controller variable name</string>
+			<key>Description</key>
+			<string>The name of the controller variable(should be lowercased)</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Default</key>
+			<string>myAny+(ViewController)</string>
+			<key>NotPersisted</key>
+			<true/>
+			<key>Nodes</key>
+			<array>
+				<string>Base</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>

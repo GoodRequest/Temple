@@ -2,10 +2,13 @@
 
 import Foundation
 import Combine
+import GoodReactor
+import GoodStructs
+import GoodCombineExtensions
 
 // MARK: - View Model Implementation
 
-final class ___VARIABLE_ID___ViewModel: Reactor {
+final class ___VARIABLE_ID___ViewModel: GoodReactor {
 
     // MARK: - View Model Definition
 
@@ -23,10 +26,10 @@ final class ___VARIABLE_ID___ViewModel: Reactor {
 
     }
 
-    // MARK: - Constant
+    // MARK: - Constants
 
-    internal let initialState = State()
-    internal let coordinator: Coordinator<AppStep>
+    internal let initialState: State
+    internal let coordinator: GoodCoordinator<AppStep>
 
     private let di: DI
 
@@ -35,6 +38,7 @@ final class ___VARIABLE_ID___ViewModel: Reactor {
     init(di: DI, coordinator: Coordinator<AppStep>) {
         self.di = di
         self.coordinator = coordinator
+        self.state = State()
     }
 
 }
@@ -54,7 +58,7 @@ extension ___VARIABLE_ID___ViewModel {
 extension ___VARIABLE_ID___ViewModel {
 
     func transform(action: AnyPublisher<Action, Never>) -> AnyPublisher<Action, Never> {
-        return Empty().erased
+        return Empty().eraseToAnyPublisher()
     }
 
     func mutate(action: Action) -> AnyPublisher<Mutation, Never> {

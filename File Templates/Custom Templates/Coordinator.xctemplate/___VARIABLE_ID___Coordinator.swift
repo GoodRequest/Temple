@@ -16,7 +16,7 @@ final class ___VARIABLE_ID___Coordinator: Coordinator<AppStep> {
 
     typealias DI = DependencyContainer
 
-    // MARK: - Constant
+    // MARK: - Constants
 
     private let di: DI
     private let parentCoordinator: Coordinator<AppStep>
@@ -43,14 +43,14 @@ final class ___VARIABLE_ID___Coordinator: Coordinator<AppStep> {
     override func start() -> UIViewController? {
         super.start()
 
-        let ___VARIABLE_ID___Controller = ___VARIABLE_ID___ViewController.create(
+        let ___VARIABLE_VarID___Controller = ___VARIABLE_ID___ViewController.create(
             viewModel: ___VARIABLE_ID___ViewModel(
                 di: di,
                 coordinator: self
             )
         )
 
-        return ___VARIABLE_ID___Controller
+        return ___VARIABLE_VarID___Controller
     }
 
 }
