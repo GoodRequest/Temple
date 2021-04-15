@@ -10,11 +10,11 @@ final class ___VARIABLE_ID___View: UIView {
 
     }
 
-    // MARK: - Outlet
+    // MARK: - Outlets
 
-    // MARK: - Variable
+    // MARK: - Variables
 
-    private var model: Model?
+    private var model: Model? 
 
     // MARK: - Lifecycle
 
@@ -22,10 +22,20 @@ final class ___VARIABLE_ID___View: UIView {
         super.awakeFromNib()
     }
 
-    // MARK: - Setup
+}
+
+// MARK: - Setup
+
+extension ___VARIABLE_ID___View {
 
     func setup(_ model: Model) {
         self.model = model
     }
+
+}
+
+// MARK: - Private
+
+private extension ___VARIABLE_ID___View {
 
 }
