@@ -60,7 +60,7 @@ final class ___VARIABLE_ID___Coordinator: Coordinator<AppStep> {
 private extension ___VARIABLE_ID___Coordinator {
 
     func navigate(to step: ___VARIABLE_ID___Step) -> StepAction {
-
+        return .none
     }
 
 }

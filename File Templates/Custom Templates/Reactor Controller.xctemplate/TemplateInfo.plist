@@ -30,7 +30,6 @@
 				<string>Base</string>
 			</array>
 		</dict>
-
 		<dict>
 			<key>Identifier</key>
 			<string>TemplateType</string>
@@ -48,9 +47,11 @@
 			<array>
 				<string>ViewController</string>
 				<string>TableViewController</string>
+				<string>TableViewControllerDiffable</string>
+				<string>CollectionVIewController</string>
+				<string>CollectionVIewControllerDiffable</string>
 			</array>
 		</dict>
-
 		<dict/>
 	</array>
 </dict>
