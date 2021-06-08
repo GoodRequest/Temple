@@ -18,13 +18,13 @@ final class ___VARIABLE_ID___ViewController: UIViewController {
 
     // MARK: - Constants
 
-    private let provider = GRTableViewProvider<Section>()
-
     private enum C {
 
     }
 
     // MARK: - Variables
+
+    lazy var provider = GRDiffableTableViewProvider<Section>(tableView: tableView)
 
     private var viewModel: ___VARIABLE_ID___ViewModel!
     private var cancellables = Set<AnyCancellable>()
@@ -78,6 +78,7 @@ private extension ___VARIABLE_ID___ViewController {
     }
 
     func setupRefreshControl() {
+        // tableView.addRefreshControl()
         provider.configureRefreshGesture = { [weak self] _ in
             self?.viewModel.send(event: .refreshData)
         }
