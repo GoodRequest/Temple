@@ -1,12 +1,15 @@
 //___FILEHEADER___
 
-import Foundation
 import UIKit
 import GRProvider
 
-// MARK: - View Model Implementation
+// MARK: - Section Factory
 
 final class ___VARIABLE_ID___Factory {
+
+    // MARK: - TypeAliases
+
+    typealias RequestEventItemModel = EventTableViewCell.Model
 
     // MARK: - Provider Section
 
@@ -17,14 +20,34 @@ final class ___VARIABLE_ID___Factory {
 
     }
 
-    struct Section: Sectionable {
+    struct Section: Sectionable, Equatable, Hashable {
+
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(items)
+        }
+
+        static func == (lhs: Section, rhs: Section) -> Bool {
+            return lhs.items == rhs.items
+        }
 
         var type: SectionType
         var items: [Item]
 
-        enum Item {
+        enum Item: Equatable, Hashable, NameDescribable {
+
+            static func == (lhs: Item, rhs: Item) -> Bool {
+                return lhs.hashValue == rhs.hashValue
+            }
 
             case item
+
+            func hash(into hasher: inout Hasher) {
+                hasher.combine(self.typeName)
+
+                switch self {
+                default: break
+                }
+            }
 
         }
 
@@ -40,15 +63,15 @@ final class ___VARIABLE_ID___Factory {
 
     }
 
-    // MARK: - Factory
+}
 
-//
-//    TODO: IMPLEMENT CUSTOM RESPONSE PARSING TO SECTIONS OR ITEMS
-//
-//    func items(for results: ResponseResults) {
-//        var sections = [Section]()
-//
-//        return sections
-//    }
+extension ___VARIABLE_ID___Factory {
+
+    func makeSections(for response: String?) -> [Section] {
+        var sections = [Section]()
+
+        return sections
+    }
 
 }
+

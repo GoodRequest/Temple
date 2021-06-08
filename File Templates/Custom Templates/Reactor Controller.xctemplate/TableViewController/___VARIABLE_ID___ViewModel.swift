@@ -1,26 +1,49 @@
 //___FILEHEADER___
 
-import Foundation
 import Combine
 import GoodReactor
 
-// MARK: - View Model Implementation
+// MARK: - View Model
 
 final class ___VARIABLE_ID___ViewModel: GoodReactor {
 
-    // MARK: - View Model Definition
+    // MARK: - TypeAliases
 
     typealias DI = WithRequestManager
+    typealias Section = ___VARIABLE_ID___Factory.Section
 
-    struct State {
+    // MARK: - Enums
+
+    enum DataFetchingState: Equatable {
+
+        case idle
+        case loading
+        case failure(AppError)
+        case empty
 
     }
 
     enum Action {
 
+        case refreshData
+
     }
 
     enum Mutation {
+
+        case didFetchData(String)
+        case didFailFetchingData(AppError)
+        case didStartLoadingData
+
+    }
+
+    // MARK: - Structs
+
+    struct State {
+
+        var dataFetchingState: DataFetchingState
+        var sections: [Section]
+        var dataResponse: String?
 
     }
 
@@ -29,6 +52,7 @@ final class ___VARIABLE_ID___ViewModel: GoodReactor {
     internal let initialState: State
     internal let coordinator: GoodCoordinator<AppStep>
 
+    private let factory = ___VARIABLE_ID___Factory()
     private let di: DI
 
     // MARK: - Constructor
@@ -36,7 +60,10 @@ final class ___VARIABLE_ID___ViewModel: GoodReactor {
     init(di: DI, coordinator: Coordinator<AppStep>) {
         self.di = di
         self.coordinator = coordinator
-        self.initialState = State()
+        self.initialState = State(
+            dataFetchingState: .idle,
+            sections: []
+        )
     }
 
 }
@@ -46,7 +73,10 @@ final class ___VARIABLE_ID___ViewModel: GoodReactor {
 extension ___VARIABLE_ID___ViewModel {
 
     func navigate(action: Action) -> AppStep? {
-
+        switch action {
+        case .refreshData:
+            return nil
+        }
     }
 
 }
@@ -55,13 +85,16 @@ extension ___VARIABLE_ID___ViewModel {
 
 extension ___VARIABLE_ID___ViewModel {
 
-    func transform(action: AnyPublisher<Action, Never>) -> AnyPublisher<Action, Never> {
-        return Empty().eraseToAnyPublisher()
+    func transform(mutation: AnyPublisher<Mutation, Never>) -> AnyPublisher<Mutation, Never> {
+        return mutation
+            .merge(with: fetchData(requestManager: di.requestManager))
+            .eraseToAnyPublisher()
     }
 
     func mutate(action: Action) -> AnyPublisher<Mutation, Never> {
         switch action {
-        default: break
+        case .refreshData:
+            return fetchData(requestManager: di.requestManager)
         }
     }
 
@@ -69,16 +102,39 @@ extension ___VARIABLE_ID___ViewModel {
         var state = state
 
         switch mutation {
-        default: break
+        case .didFetchData(let dataResponse):
+            state.dataResponse = dataResponse
+            state.dataFetchingState = .idle
+            state = updateSections(state: state)
+
+        case .didFailFetchingData(let error):
+            state.dataFetchingState = .failure(error)
+
+        case .didStartLoadingData:
+            state.dataFetchingState = .loading
         }
 
         return state
+    }
+
+    private func updateSections(state: State) -> State {
+        var newState = state
+
+        newState.sections = factory.makeSections(for: state.dataResponse)
+        newState.dataFetchingState = state.sections.isEmpty ? .empty : .idle
+
+        return newState
     }
 
 }
 
 // MARK: - Private
 
-extension ___VARIABLE_ID___ViewModel {
+private extension ___VARIABLE_ID___ViewModel {
+
+    func fetchData(requestManager: RequestManagerType) -> AnyPublisher<Mutation, Never> {
+        return Just(Mutation.didStartLoadingData)
+            .eraseToAnyPublisher()
+    }
 
 }

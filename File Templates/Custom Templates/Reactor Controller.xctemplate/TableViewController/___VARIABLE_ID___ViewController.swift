@@ -2,12 +2,19 @@
 
 import UIKit
 import Combine
+import GRProvider
 
 // MARK: - Class
 
 final class ___VARIABLE_ID___ViewController: UIViewController {
 
+    // MARK: - TypeAliases
+
+    typealias Section = ___VARIABLE_ID___Factory.Section
+
     // MARK: - Outlets
+
+    @IBOutlet weak var tableView: UITableView!
 
     // MARK: - Constants
 
@@ -16,6 +23,8 @@ final class ___VARIABLE_ID___ViewController: UIViewController {
     }
 
     // MARK: - Variables
+
+    lazy var provider = GRDiffableTableViewProvider<Section>(tableView: tableView)
 
     private var viewModel: ___VARIABLE_ID___ViewModel!
     private var cancellables = Set<AnyCancellable>()
@@ -37,6 +46,10 @@ extension ___VARIABLE_ID___ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupTableView()
+        setupTableProvider()
+        setupNavigation()
+
         bindState(reactor: viewModel)
         bindActions(reactor: viewModel)
     }
@@ -45,7 +58,35 @@ extension ___VARIABLE_ID___ViewController {
 
 // MARK: - Setup
 
-extension ___VARIABLE_ID___ViewController {
+private extension ___VARIABLE_ID___ViewController {
+
+    // MARK: - Setup Navigation
+
+    func setupNavigation() {}
+
+    // MARK: - Setup Table View
+
+    func setupTableView() {
+        registerCells()
+        setupRefreshControl()
+    }
+
+    func registerCells() {}
+
+    func setupRefreshControl() {
+        // tableView.addRefreshControl()
+        provider.configureRefreshGesture = { [weak self] _ in
+            self?.viewModel.send(event: .refreshData)
+        }
+    }
+
+    // MARK: - Setup Table View Provider
+
+    func setupTableProvider() {
+        setupCell()
+    }
+
+    func setupCell() {}
 
 }
 
@@ -54,7 +95,34 @@ extension ___VARIABLE_ID___ViewController {
 extension ___VARIABLE_ID___ViewController {
 
     func bindState(reactor: ___VARIABLE_ID___ViewModel) {
+        reactor.state
+            .map { $0.dataFetchingState }
+            .removeDuplicates()
+            .sink { [weak self] state in
+                switch state {
+                case .idle:
+                    self?.handleIdleState()
 
+                case .loading:
+                    self?.handleLoadingState()
+
+                case .failure(let error):
+                    self?.handleErrorState(error: error)
+
+                case .empty:
+                    self?.handleEmptyState()
+                }
+            }
+            .store(in: &cancellables)
+
+        reactor.state
+            .map { $0.sections }
+            .removeDuplicates()
+            .sink { [weak self] sections in
+                guard let self = self else { return }
+                self.provider.bind(to: self.tableView, sections: sections)
+            }
+            .store(in: &cancellables)
     }
 
     func bindActions(reactor: ___VARIABLE_ID___ViewModel) {
@@ -66,5 +134,29 @@ extension ___VARIABLE_ID___ViewController {
 // MARK: - Private
 
 extension ___VARIABLE_ID___ViewController {
+
+    func handleIdleState() {
+        tableView.refreshControl?.endCurrentRefreshing()
+    }
+
+    func handleLoadingState() {
+        if !tableView.isRefreshing {
+            //Handle content loading
+        }
+    }
+
+    func handleErrorState(error: AppError) {
+        tableView.refreshControl?.endCurrentRefreshing()
+        if viewModel.currentState.sections.isEmpty {
+            //Handle content error
+        } else {
+            //Handle alert error
+        }
+    }
+
+    func handleEmptyState() {
+        tableView.refreshControl?.endCurrentRefreshing()
+        //Handle empty state
+    }
 
 }
