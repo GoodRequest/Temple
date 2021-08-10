@@ -16,24 +16,30 @@ final class ___VARIABLE_ID___ViewModel: GoodReactor {
 
     enum DataFetchingState: Equatable {
 
-        case idle
-        case loading
-        case failure(AppError)
-        case empty
+// Sample data fetching states
+//
+//        case idle
+//        case loading
+//        case failure(AppError)
+//        case empty
 
     }
 
     enum Action {
 
-        case refreshData
+// Sample actions
+//
+//        case refreshData
 
     }
 
     enum Mutation {
 
-        case didFetchData(String)
-        case didFailFetchingData(AppError)
-        case didStartLoadingData
+// Sample mutations
+//
+//        case didFetchData(String)
+//        case didFailFetchingData(AppError)
+//        case didStartLoadingData
 
     }
 
@@ -73,10 +79,13 @@ final class ___VARIABLE_ID___ViewModel: GoodReactor {
 extension ___VARIABLE_ID___ViewModel {
 
     func navigate(action: Action) -> AppStep? {
-        switch action {
-        case .refreshData:
-            return nil
-        }
+        return nil
+// Use switch over action when handling more than one action
+//
+//        switch action {
+//        case .refreshData:
+//            return nil
+//        }
     }
 
 }
@@ -85,46 +94,54 @@ extension ___VARIABLE_ID___ViewModel {
 
 extension ___VARIABLE_ID___ViewModel {
 
-    func transform(mutation: AnyPublisher<Mutation, Never>) -> AnyPublisher<Mutation, Never> {
-        return mutation
-            .merge(with: fetchData(requestManager: di.requestManager))
-            .eraseToAnyPublisher()
-    }
+// Use transform mutation to call a data fetching mutation on view model init ( Prefeching data before UI loads )
+//
+//    func transform(mutation: AnyPublisher<Mutation, Never>) -> AnyPublisher<Mutation, Never> {
+//        return mutation
+//            .merge(with: fetchData(requestManager: di.requestManager))
+//            .eraseToAnyPublisher()
+//    }
 
     func mutate(action: Action) -> AnyPublisher<Mutation, Never> {
-        switch action {
-        case .refreshData:
-            return fetchData(requestManager: di.requestManager)
-        }
+        Empty().eraseToAnyPublisher()
+// User switch over actions when using more than one action
+//
+//        switch action {
+//        case .refreshData:
+//            return fetchData(requestManager: di.requestManager)
+//        }
     }
 
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
-
-        switch mutation {
-        case .didFetchData(let dataResponse):
-            state.dataResponse = dataResponse
-            state.dataFetchingState = .idle
-            state = updateSections(state: state)
-
-        case .didFailFetchingData(let error):
-            state.dataFetchingState = .failure(error)
-
-        case .didStartLoadingData:
-            state.dataFetchingState = .loading
-        }
+// Switch over mutations when using more than one mutation
+//
+//        switch mutation {
+//        case .didFetchData(let dataResponse):
+//            state.dataResponse = dataResponse
+//            state.dataFetchingState = .idle
+//            state = updateSections(state: state)
+//
+//        case .didFailFetchingData(let error):
+//            state.dataFetchingState = .failure(error)
+//
+//        case .didStartLoadingData:
+//            state.dataFetchingState = .loading
+//        }
 
         return state
     }
 
-    private func updateSections(state: State) -> State {
-        var newState = state
-
-        newState.sections = factory.makeSections(for: state.dataResponse)
-        newState.dataFetchingState = state.sections.isEmpty ? .empty : .idle
-
-        return newState
-    }
+// Use function to handle repetitive section updates
+//
+//    private func updateSections(state: State) -> State {
+//        var newState = state
+//
+//        newState.sections = factory.makeSections(for: state.dataResponse)
+//        newState.dataFetchingState = state.sections.isEmpty ? .empty : .idle
+//
+//        return newState
+//    }
 
 }
 
@@ -132,9 +149,11 @@ extension ___VARIABLE_ID___ViewModel {
 
 private extension ___VARIABLE_ID___ViewModel {
 
-    func fetchData(requestManager: RequestManagerType) -> AnyPublisher<Mutation, Never> {
-        return Just(Mutation.didStartLoadingData)
-            .eraseToAnyPublisher()
-    }
+// Use a separate function to handle data fetching
+//
+//    func fetchData(requestManager: RequestManagerType) -> AnyPublisher<Mutation, Never> {
+//        return Just(Mutation.didStartLoadingData)
+//            .eraseToAnyPublisher()
+//    }
 
 }

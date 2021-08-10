@@ -2,6 +2,7 @@
 
 import UIKit
 import GRProvider
+import GoodExtensions
 
 // MARK: - Section Factory
 
@@ -11,8 +12,11 @@ final class ___VARIABLE_ID___Factory {
 
     enum SectionType: Int {
 
-        case first = 0
-        case second = 1
+// Sample section types
+//
+//        case first = 0
+//        case second = 1
+
 
     }
 
@@ -47,15 +51,17 @@ final class ___VARIABLE_ID___Factory {
 
         }
 
-        var title: String? {
-            switch type {
-            case .first:
-                return "First"
-
-            case .second:
-                return "Second"
-            }
-        }
+// Sample title
+//
+//        var title: String? {
+//            switch type {
+//            case .first:
+//                return "First"
+//
+//            case .second:
+//                return "Second"
+//            }
+//        }
 
     }
 

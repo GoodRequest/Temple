@@ -104,19 +104,21 @@ extension ___VARIABLE_ID___ViewController {
             .map { $0.dataFetchingState }
             .removeDuplicates()
             .sink { [weak self] state in
-                switch state {
-                case .idle:
-                    self?.showIdleState()
-
-                case .loading:
-                    self?.showLoadingState()
-
-                case .failure(let error):
-                    self?.showErrorState(error: error)
-
-                case .empty:
-                    self?.showEmptyState()
-                }
+// Switch over data fetching states to handle
+//
+//                switch state {
+//                case .idle:
+//                    self?.showIdleState()
+//
+//                case .loading:
+//                    self?.showLoadingState()
+//
+//                case .failure(let error):
+//                    self?.showErrorState(error: error)
+//
+//                case .empty:
+//                    self?.showEmptyState()
+//                }
             }
             .store(in: &cancellables)
 
@@ -140,25 +142,27 @@ extension ___VARIABLE_ID___ViewController {
 
 extension ___VARIABLE_ID___ViewController {
 
-    func showIdleState() {
-        tableView.refreshControl?.endCurrentRefreshing()
-    }
-
-    func showLoadingState() {
-
-    }
-
-    func showErrorState(error: AppError) {
-        tableView.refreshControl?.endCurrentRefreshing()
-        if viewModel.currentState.sections.isEmpty {
-
-        } else {
-
-        }
-    }
-
-    func showEmptyState() {
-        tableView.refreshControl?.endCurrentRefreshing()
-    }
+// Sample state handling functions
+//
+//    func showIdleState() {
+//        tableView.refreshControl?.endCurrentRefreshing()
+//    }
+//
+//    func showLoadingState() {
+//
+//    }
+//
+//    func showErrorState(error: AppError) {
+//        tableView.refreshControl?.endCurrentRefreshing()
+//        if viewModel.currentState.sections.isEmpty {
+//
+//        } else {
+//
+//        }
+//    }
+//
+//    func showEmptyState() {
+//        tableView.refreshControl?.endCurrentRefreshing()
+//    }
 
 }
