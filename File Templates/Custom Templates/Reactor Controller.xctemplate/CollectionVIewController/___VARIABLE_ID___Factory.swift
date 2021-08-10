@@ -9,18 +9,19 @@ final class ___VARIABLE_ID___Factory {
 
     // MARK: - Provider Section
 
-    enum SectionType: Int {
-
 // Sample section types
+//
+//    enum SectionType: Int {
+//
 //
 //        case first = 0
 //        case second = 1
-
-    }
+//
+//    }
 
     struct Section: Sectionable, Equatable {
 
-        var type: SectionType
+//        var type: SectionType
         var items: [Item]
 
         enum Item: Equatable {

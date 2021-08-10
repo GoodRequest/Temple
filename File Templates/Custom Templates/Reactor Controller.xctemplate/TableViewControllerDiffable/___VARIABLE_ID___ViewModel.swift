@@ -47,7 +47,7 @@ final class ___VARIABLE_ID___ViewModel: GoodReactor {
 
     struct State {
 
-        var dataFetchingState: DataFetchingState
+        var dataFetchingState: DataFetchingState?
         var sections: [Section]
         var dataResponse: String?
 
@@ -66,8 +66,9 @@ final class ___VARIABLE_ID___ViewModel: GoodReactor {
     init(di: DI, coordinator: Coordinator<AppStep>) {
         self.di = di
         self.coordinator = coordinator
+
         self.initialState = State(
-            dataFetchingState: .idle,
+            dataFetchingState: nil,
             sections: []
         )
     }

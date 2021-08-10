@@ -78,10 +78,11 @@ private extension ___VARIABLE_ID___ViewController {
     }
 
     func setupRefreshControl() {
-        // tableView.addRefreshControl()
-        provider.configureRefreshGesture = { [weak self] _ in
-            self?.viewModel.send(event: .refreshData)
-        }
+// Setup refresh controll action bound to view model action
+//
+//        provider.configureRefreshGesture = { [weak self] _ in
+//            self?.viewModel.send(event: .refreshData)
+//        }
     }
 
     // MARK: - Setup Table View Provider
