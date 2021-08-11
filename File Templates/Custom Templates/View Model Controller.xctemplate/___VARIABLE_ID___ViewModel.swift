@@ -1,4 +1,4 @@
-//___FILEHEADER___
+// ___FILEHEADER___
 
 import Foundation
 
@@ -6,7 +6,7 @@ import Foundation
 
 final class ___VARIABLE_ID___ViewModel {
 
-    private var viewDelegate: ___VARIABLE_ID___ViewDelegate?
+    private weak var viewDelegate: ___VARIABLE_ID___ViewDelegate?
 
     // MARK: - Constructor
 

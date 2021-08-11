@@ -1,4 +1,4 @@
-//___FILEHEADER___
+// ___FILEHEADER___
 
 import UIKit
 import GRProvider
@@ -59,4 +59,3 @@ extension ___VARIABLE_ID___Factory {
     }
 
 }
-

@@ -1,4 +1,4 @@
-//___FILEHEADER___
+// ___FILEHEADER___
 
 import Combine
 import GoodReactor
@@ -61,7 +61,7 @@ final class ___VARIABLE_ID___ViewModel: GoodReactor {
     private let factory = ___VARIABLE_ID___Factory()
     private let di: DI
 
-    // MARK: - Constructor
+    // MARK: - Initialization
 
     init(di: DI, coordinator: Coordinator<AppStep>) {
         self.di = di

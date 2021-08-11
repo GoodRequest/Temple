@@ -1,4 +1,4 @@
-//___FILEHEADER___
+// ___FILEHEADER___
 
 import Foundation
 import Combine
@@ -8,19 +8,23 @@ import GoodReactor
 
 final class ___VARIABLE_ID___ViewModel: GoodReactor {
 
-    // MARK: - View Model Definition
+    // MARK: - TypeAliases
 
     typealias DI = WithRequestManager
 
-    struct State {
-
-    }
+    // MARK: - Enums
 
     enum Action {
 
     }
 
     enum Mutation {
+
+    }
+
+    // MARK: - Structs
+
+    struct State {
 
     }
 
@@ -31,7 +35,7 @@ final class ___VARIABLE_ID___ViewModel: GoodReactor {
 
     private let di: DI
 
-    // MARK: - Constructor
+    // MARK: - Initialization
 
     init(di: DI, coordinator: Coordinator<AppStep>) {
         self.di = di
@@ -55,22 +59,19 @@ extension ___VARIABLE_ID___ViewModel {
 
 extension ___VARIABLE_ID___ViewModel {
 
-    func transform(action: AnyPublisher<Action, Never>) -> AnyPublisher<Action, Never> {
-        return Empty().eraseToAnyPublisher()
-    }
-
     func mutate(action: Action) -> AnyPublisher<Mutation, Never> {
-        switch action {
-        default: break
-        }
+        return Empty().eraseToAnyPublisher()
+//        switch action {
+//        default: break
+//        }
     }
 
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
 
-        switch mutation {
-        default: break
-        }
+//        switch mutation {
+//        default: break
+//        }
 
         return state
     }

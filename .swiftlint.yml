@@ -1,24 +1,158 @@
 excluded:
-  - Tester
+    - Pods
+    - lint.swift
 
-disabled_rules:
-  - identifier_name
-  - valid_docs
-  - type_name
+disabled_rules: # rule identifiers turned on by default to exclude from running
 
-analyzer_rules: # Rules run by `swiftlint analyze` (experimental)
-- explicit_self
+    - identifier_name
+    - type_name
+    - cyclomatic_complexity
+    - function_body_length
+    - file_length
+    - block_based_kvo
+    - nesting
+    
+opt_in_rules: # some rules are turned off by default, so you need to opt-in
 
-file_length:
-  warning: 550
-  error: 1200
+    # Lint: Extra Code that doesn't do anything, Redundancy of expression
 
-line_length: 200
-cyclomatic_complexity: 12
-function_body_length: 80
-function_parameter_count: 5
-type_body_length: 300
+    - superfluous_disable_command
+    - unused_capture_list
+    - unused_closure_parameter
+    - unused_declaration
+    - unused_enumerated
+    - unused_import
+    - unused_setter_value
+    - unneeded_break_in_switch
+    - explicit_self
+    - control_statement
+    - explicit_init
+    - empty_collection_literal
+    - empty_enum_arguments
+    - empty_parameters
+    - empty_parentheses_with_trailing_closure
+    - unneeded_parentheses_in_closure_argument
+    - redundant_discardable_let
+    - shorthand_operator
 
-# // swiftlint:disable <rule1>
-# // swiftlint:enable <rule1>
+    # Style
 
+    - protocol_property_accessors_order
+
+    # Space Formatting
+    # Switch
+
+    - switch_case_alignment
+
+    # Other
+
+    - trailing_comma
+    - trailing_semicolon
+    - trailing_whitespace
+    - vertical_whitespace
+    - operator_usage_whitespace
+    - operator_whitespace
+    - opening_brace
+    - no_space_in_method_call
+    - leading_whitespace
+    - closure_spacing
+    - colon
+    - comma
+    - return_arrow_whitespace
+
+    # New line formatting
+    # Switch
+
+    - vertical_whitespace_between_cases
+    - switch_case_on_newline
+
+    # Other
+
+    - multiline_arguments
+    - multiline_arguments_brackets
+    - multiline_literal_brackets
+    - multiline_parameters
+    - multiline_parameters_brackets
+    - multiple_closures_with_trailing_closure
+    - closure_parameter_position
+
+    # Alignment
+
+    - closure_end_indentation
+    - collection_alignment
+
+    # Lack of description
+
+    - fatal_error_message
+
+    # Prone to logical errors
+
+    - anyobject_protocol
+    - weak_delegate
+    - empty_count
+    - empty_string
+    - force_cast
+    - force_try
+    - force_unwrapping
+    - identical_operands
+    - overridden_super_call
+    - yoda_condition
+    - class_delegate_protocol
+
+    # Legacy
+
+    - legacy_cggeometry_functions
+    - legacy_constant
+    - legacy_constructor
+    - legacy_hashing
+    - legacy_multiple
+    - legacy_nsgeometry_functions
+    - legacy_random
+
+    # Idiomatic: Can be written in a more human centered language
+
+    - toggle_bool
+    - syntactic_sugar
+    - redundant_type_annotation
+    - redundant_set_access_control
+    - redundant_optional_initialization
+    - redundant_objc_attribute
+    - redundant_string_enum_value
+    - number_separator
+    - prefer_zero_over_explicit_init
+    - for_where
+    - joined_default_parameter
+
+    # Performace related
+
+    - contains_over_filter_count
+    - contains_over_filter_is_empty
+    - contains_over_first_not_nil
+    - contains_over_range_nil_comparison
+    - extension_access_modifier
+    - first_where
+    - flatmap_over_map_reduce
+    - last_where
+    - reduce_boolean
+
+    # Non default parameters
+
+    - large_tuple:
+        warning: 3
+        error: 4
+
+    - enum_case_associated_values_count:
+        warning: 3
+        error: 4
+
+    - function_parameter_count:
+        warning: 5
+        error: 6
+
+    - line_length:
+        warning: 120
+        error: 200
+
+    - type_body_length:
+        warning: 200
+        error: 400

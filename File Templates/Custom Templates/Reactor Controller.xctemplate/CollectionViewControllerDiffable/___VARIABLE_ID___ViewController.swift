@@ -1,4 +1,4 @@
-//___FILEHEADER___
+// ___FILEHEADER___
 
 import UIKit
 import Combine
@@ -31,7 +31,7 @@ final class ___VARIABLE_ID___ViewController: UIViewController {
     private var viewModel: ___VARIABLE_ID___ViewModel!
     private var cancellables = Set<AnyCancellable>()
 
-    // MARK: - Initializer
+    // MARK: - Initialization
 
     static func create(viewModel: ___VARIABLE_ID___ViewModel) -> Self {
         let instance = gr.makeInstance()
@@ -65,7 +65,7 @@ private extension ___VARIABLE_ID___ViewController {
     // MARK: - Setup Navigation
 
     func setupNavigation() {
-        
+
     }
 
     // MARK: - Setup Collection View

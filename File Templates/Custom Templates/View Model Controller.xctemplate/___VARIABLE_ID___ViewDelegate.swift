@@ -1,8 +1,8 @@
-//___FILEHEADER___
+// ___FILEHEADER___
 
 import Foundation
 
-protocol ___VARIABLE_ID___VM: class { 
+protocol ___VARIABLE_ID___VM: class {
     func setup(viewDelegate: ___VARIABLE_ID___ViewDelegate)
 }
 
