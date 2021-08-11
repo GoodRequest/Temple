@@ -1,0 +1,3 @@
+[submodule "Lint"]
+	path = Lint
+	url = git@bitbucket.org:GoodRequest/swiftlint.git

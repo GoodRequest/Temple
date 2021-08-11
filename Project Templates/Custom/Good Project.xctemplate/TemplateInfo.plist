@@ -13,39 +13,8 @@
 	</array>
 	<key>Concrete</key>
 	<true/>
-	<key>Description</key>
-	<string>This template provides a starting point for an application that uses a single view. It provides a view controller to manage the view, and a storyboard or nib file that contains the view.</string>
-	<key>SortOrder</key>
-	<integer>1</integer>
-	<key>NameOfInitialFileForEditor</key>
-	<string>ContentView.swift</string>
 	<key>Definitions</key>
 	<dict>
-		<key>../___PACKAGENAME___.xcodeproj/project.pbxproj</key>
-		<dict/>
-		<key>Path</key>
-		<string>project.pbxproj</string>
-		<key>../___PACKAGENAME___.xcodeproj/xcuserdata/___USERNAME___.xcuserdatad/xcschemes/xcschememanagement.plist</key>
-		<dict/>
-		<key>../___PACKAGENAME___.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved</key>
-		<dict>
-			<key>Path</key>
-			<string>Package.resolved</string>
-		</dict>
-		<key>../___PACKAGENAME___.xcworkspace/xcshareddata/swiftpm/Package.resolved</key>
-		<dict>
-			<key>Path</key>
-			<string>Package.resolved</string>
-		</dict>
-		<key>Application/AppConfig.swift</key>
-		<dict>
-			<key>Path</key>
-			<string>Application/AppConfig.swift</string>
-			<key>Group</key>
-			<array>
-				<string>Application</string>
-			</array>
-		</dict>
 		<key>Application/AppDelegate.swift</key>
 		<dict>
 			<key>Path</key>
@@ -55,165 +24,188 @@
 				<string>Application</string>
 			</array>
 		</dict>
-		<key>Model/Response/SampleResponse.swift</key>
+		<key>Extensions/Foundation/String+Extensions.swift</key>
 		<dict>
 			<key>Path</key>
-			<string>Model/Response/SampleResponse.swift</string>
+			<string>Extensions/Foundation/String+Extensions.swift</string>
 			<key>Group</key>
 			<array>
-				<string>Model</string>
-				<string>Response</string>
-			</array>
-		</dict>
-		<key>Model/Request/SampleRequest.swift</key>
-		<dict>
-			<key>Path</key>
-			<string>Model/Request/SampleRequest.swift</string>
-			<key>Group</key>
-			<array>
-				<string>Model</string>
-				<string>Request</string>
-			</array>
-		</dict>
-		<key>Screen/SampleController/SampleViewController.swift</key>
-		<dict>
-			<key>Path</key>
-			<string>Screen/SampleController/SampleViewController.swift</string>
-			<key>Group</key>
-			<array>
-				<string>Screen</string>
-				<string>SampleController</string>
-			</array>
-		</dict>
-		<key>View/SampleView/SampleView.swift</key>
-		<dict>
-			<key>Path</key>
-			<string>View/SampleView/SampleView.swift</string>
-			<key>Group</key>
-			<array>
-				<string>View</string>
-				<string>SampleView</string>
-			</array>
-		</dict>
-		<key>Manager/Request/RequestManager.swift</key>
-		<dict>
-			<key>Path</key>
-			<string>Manager/Request/RequestManager.swift</string>
-			<key>Group</key>
-			<array>
-				<string>Manager</string>
-				<string>Request</string>
-			</array>
-		</dict>
-		<key>Manager/Request/RequestManagerType.swift</key>
-		<dict>
-			<key>Path</key>
-			<string>Manager/Request/RequestManagerType.swift</string>
-			<key>Group</key>
-			<array>
-				<string>Manager</string>
-				<string>Request</string>
-			</array>
-		</dict>
-		<key>Manager/Request/Endpoint.swift</key>
-		<dict>
-			<key>Path</key>
-			<string>Manager/Request/Endpoint.swift</string>
-			<key>Group</key>
-			<array>
-				<string>Manager</string>
-				<string>Request</string>
-			</array>
-		</dict>
-		<key>Extension/Foundation/String.swift</key>
-		<dict>
-			<key>Path</key>
-			<string>Extension/Foundation/String.swift</string>
-			<key>Group</key>
-			<array>
-				<string>Extension</string>
+				<string>Extensions</string>
 				<string>Foundation</string>
 			</array>
 		</dict>
-		<key>Extension/UIKit/UIView.swift</key>
+		<key>Extensions/UIKit/UIView+Extensions.swift</key>
 		<dict>
 			<key>Path</key>
-			<string>Extension/UIKit/UIView.swift</string>
+			<string>Extensions/UIKit/UIView+Extensions.swift</string>
 			<key>Group</key>
 			<array>
-				<string>Extension</string>
+				<string>Extensions</string>
 				<string>UIKit</string>
 			</array>
 		</dict>
-		<key>Resource/Assets.xcassets</key>
+		<key>Helpers/TypeAliases.swift</key>
 		<dict>
 			<key>Path</key>
-			<string>Resource/Assets.xcassets</string>
+			<string>Helpers/TypeAliases.swift</string>
+			<key>Group</key>
+			<string>Helpers</string>
+		</dict>
+		<key>Models/Error/AppError.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Models/Error/AppError.swift</string>
 			<key>Group</key>
 			<array>
-				<string>Resource</string>
+				<string>Models</string>
+				<string>Error</string>
 			</array>
 		</dict>
-		<key>Resource/Colors.xcassets</key>
+		<key>Models/Response/SampleResponse.swift</key>
 		<dict>
 			<key>Path</key>
-			<string>Resource/Colors.xcassets</string>
+			<string>Models/Response/SampleResponse.swift</string>
 			<key>Group</key>
 			<array>
-				<string>Resource</string>
+				<string>Models</string>
+				<string>Response</string>
 			</array>
 		</dict>
-		<key>../swiftgen.yml</key>
+		<key>Models/Request/SampleRequest.swift</key>
 		<dict>
-			<key>Group</key>
-			<string>Resource</string>
 			<key>Path</key>
-			<string>swiftgen.yml</string>
-		</dict>
-		<key>../.swiftlint.yml</key>
-		<dict>
+			<string>Models/Request/SampleRequest.swift</string>
 			<key>Group</key>
-			<string>Resource</string>
+			<array>
+				<string>Models</string>
+				<string>Request</string>
+			</array>
+		</dict>
+		<key>Managers/Dependency/DependencyContainer.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Managers/Dependency/DependencyContainer.swift</string>
+			<key>Group</key>
+			<array>
+				<string>Managers</string>
+				<string>Dependency</string>
+			</array>
+		</dict>
+		<key>Managers/Request/RequestManager.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Managers/Request/RequestManager.swift</string>
+			<key>Group</key>
+			<array>
+				<string>Managers</string>
+				<string>Request</string>
+			</array>
+		</dict>
+		<key>Managers/Request/RequestManagerType.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Managers/Request/RequestManagerType.swift</string>
+			<key>Group</key>
+			<array>
+				<string>Managers</string>
+				<string>Request</string>
+			</array>
+		</dict>
+		<key>Managers/Request/Endpoint.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Managers/Request/Endpoint.swift</string>
+			<key>Group</key>
+			<array>
+				<string>Managers</string>
+				<string>Request</string>
+			</array>
+		</dict>
+		<key>Coordinators/Coordinator.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Coordinators/Coordinator.swift</string>
+			<key>Group</key>
+			<string>Coordinators</string>
+		</dict>
+		<key>Coordinators/AppCoordinator.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Coordinators/AppCoordinator.swift</string>
+			<key>Group</key>
+			<string>Coordinators</string>
+		</dict>
+		<key>Screens/SampleController/SampleViewController.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Screens/SampleController/SampleViewController.swift</string>
+			<key>Group</key>
+			<array>
+				<string>Screens</string>
+				<string>SampleController</string>
+			</array>
+		</dict>
+		<key>Views/SampleView/SampleView.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Views/SampleView/SampleView.swift</string>
+			<key>Group</key>
+			<array>
+				<string>Views</string>
+				<string>SampleView</string>
+			</array>
+		</dict>
+		<key>Resources/Assets.xcassets</key>
+		<dict>
+			<key>Path</key>
+			<string>Resources/Assets.xcassets</string>
+			<key>Group</key>
+			<array>
+				<string>Resources</string>
+			</array>
+		</dict>
+		<key>Resources/Colors.xcassets</key>
+		<dict>
+			<key>Path</key>
+			<string>Resources/Colors.xcassets</string>
+			<key>Group</key>
+			<array>
+				<string>Resources</string>
+			</array>
+		</dict>
+		<key>Resources/SwiftGen/swiftgen.yml</key>
+		<dict>
+			<key>Path</key>
+			<string>Resources/SwiftGen/swiftgen.yml</string>
+			<key>Group</key>
+			<array>
+				<string>Resources</string>
+				<string>SwiftGen</string>
+			</array>
 		</dict>
 	</dict>
 	<key>Nodes</key>
 	<array>
 		<string>Application/AppDelegate.swift</string>
-		<string>Application/AppConfig.swift</string>
-		<string>Model/Response/SampleResponse.swift</string>
-		<string>Model/Request/SampleRequest.swift</string>
-		<string>Screen/SampleController/SampleViewController.swift</string>
-		<string>View/SampleView/SampleView.swift</string>
-		<string>Manager/Request/RequestManager.swift</string>
-		<string>Manager/Request/RequestManagerType.swift</string>
-		<string>Manager/Request/Endpoint.swift</string>
-		<string>Extension/UIKit/UIView.swift</string>
-		<string>Extension/Foundation/String.swift</string>
-		<string>Resource/Colors.xcassets</string>
-		<string>Resource/Assets.xcassets</string>
-		<string>../swiftgen.yml</string>
-		<string>../.swiftlint.yml</string>
+		<string>Extensions/UIKit/UIView+Extensions.swift</string>
+		<string>Extensions/Foundation/String+Extensions.swift</string>
+		<string>Helpers/TypeAliases.swift</string>
+		<string>Models/Error/AppError.swift</string>
+		<string>Models/Response/SampleResponse.swift</string>
+		<string>Models/Request/SampleRequest.swift</string>
+		<string>Managers/Dependency/DependencyContainer.swift</string>
+		<string>Managers/Request/RequestManager.swift</string>
+		<string>Managers/Request/RequestManagerType.swift</string>
+		<string>Managers/Request/Endpoint.swift</string>
+		<string>Coordinators/Coordinator.swift</string>
+		<string>Coordinators/AppCoordinator.swift</string>
+		<string>Screens/SampleController/SampleViewController.swift</string>
+		<string>Views/SampleView/SampleView.swift</string>
+		<string>Resources/SwiftGen/swiftgen.yml</string>
+		<string>Resources/Colors.xcassets</string>
+		<string>Resources/Assets.xcassets</string>
 		<string>Info.plist:UIMainStoryboardFile</string>
 		<string>Info.plist:UIApplicationSceneManifest:UISceneStoryboardFile</string>
-	</array>
-	<key>Options</key>
-	<array>
-		<dict>
-			<key>Identifier</key>
-			<string>ID</string>
-			<key>Required</key>
-			<true/>
-			<key>Name</key>
-			<string>Base Name</string>
-			<key>Description</key>
-			<string>The name of the Model, View and ViewModel to create</string>
-			<key>Type</key>
-			<string>text</string>
-			<key>Default</key>
-			<string>MyModel</string>
-			<key>NotPersisted</key>
-			<true/>
-		</dict>
 	</array>
 </dict>
 </plist>
