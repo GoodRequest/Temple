@@ -1,4 +1,4 @@
-//___FILEHEADER___
+// ___FILEHEADER___
 
 import UIKit
 
@@ -6,15 +6,15 @@ import UIKit
 
 final class ___VARIABLE_ID___ViewController: UIViewController {
 
-    // MARK: - Outlet
+    // MARK: - Outlets
 
-    // MARK: - Constant
+    // MARK: - Constants
 
     private enum C {
 
     }
 
-    // MARK: - Variable
+    // MARK: - Variables
 
     private var viewModel: ___VARIABLE_ID___VM!
 

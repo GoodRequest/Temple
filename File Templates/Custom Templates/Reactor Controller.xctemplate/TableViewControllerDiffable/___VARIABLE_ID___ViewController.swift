@@ -18,13 +18,13 @@ final class ___VARIABLE_ID___ViewController: UIViewController {
 
     // MARK: - Constants
 
-    private let provider = GRTableViewProvider<Section>()
-
     private enum C {
 
     }
 
     // MARK: - Variables
+
+    lazy var provider = GRDiffableTableViewProvider<Section>(tableView: tableView)
 
     private var viewModel: ___VARIABLE_ID___ViewModel!
     private var cancellables = Set<AnyCancellable>()

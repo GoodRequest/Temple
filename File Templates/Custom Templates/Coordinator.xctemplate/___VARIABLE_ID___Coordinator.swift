@@ -1,4 +1,4 @@
-//___FILEHEADER___
+// ___FILEHEADER___
 
 import UIKit
 
@@ -55,12 +55,12 @@ final class ___VARIABLE_ID___Coordinator: Coordinator<AppStep> {
 
 }
 
-// MARK: Navigation - Private
+// MARK: Navigation
 
-extension ___VARIABLE_ID___Coordinator {
+private extension ___VARIABLE_ID___Coordinator {
 
-    private func navigate(to step: ___VARIABLE_ID___Step) -> StepAction {
-
+    func navigate(to step: ___VARIABLE_ID___Step) -> StepAction {
+        return .none
     }
 
 }

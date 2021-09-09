@@ -1,4 +1,4 @@
-//___FILEHEADER___
+// ___FILEHEADER___
 
 import UIKit
 
@@ -10,7 +10,7 @@ final class ___VARIABLE_ID___Manager: ___VARIABLE_ID___ManagerType {
 
     typealias DI = DependencyContainer
 
-    // MARK: - Constant
+    // MARK: - Constants
 
     private let di: DI
 

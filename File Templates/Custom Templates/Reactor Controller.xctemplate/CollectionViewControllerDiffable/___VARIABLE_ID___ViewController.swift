@@ -14,17 +14,19 @@ final class ___VARIABLE_ID___ViewController: UIViewController {
 
     // MARK: - Outlets
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
 
     // MARK: - Constants
 
-    private let provider = GRTableViewProvider<Section>()
+    private let layoutComposer = ___VARIABLE_ID___LayoutComposer()
 
     private enum C {
 
     }
 
     // MARK: - Variables
+
+    lazy var provider = GRDiffableCollectionViewProvider<Section>(collectionView: collectionView)
 
     private var viewModel: ___VARIABLE_ID___ViewModel!
     private var cancellables = Set<AnyCancellable>()
@@ -46,8 +48,8 @@ extension ___VARIABLE_ID___ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupTableView()
-        setupTableProvider()
+        setupCollectionView()
+        setupCollectionProvider()
         setupNavigation()
 
         bindState(reactor: viewModel)
@@ -66,9 +68,9 @@ private extension ___VARIABLE_ID___ViewController {
 
     }
 
-    // MARK: - Setup Table View
+    // MARK: - Setup Collection View
 
-    func setupTableView() {
+    func setupCollectionView() {
         registerCells()
         setupRefreshControl()
     }
@@ -85,9 +87,9 @@ private extension ___VARIABLE_ID___ViewController {
 //        }
     }
 
-    // MARK: - Setup Table View Provider
+    // MARK: - Setup Collection View Provider
 
-    func setupTableProvider() {
+    func setupCollectionProvider() {
         setupCell()
     }
 
@@ -129,7 +131,7 @@ extension ___VARIABLE_ID___ViewController {
             .removeDuplicates()
             .sink { [weak self] sections in
                 guard let self = self else { return }
-                self.provider.bind(to: self.tableView, sections: sections)
+                self.provider.bind(to: self.collectionView, sections: sections)
             }
             .store(in: &cancellables)
     }
@@ -146,16 +148,16 @@ extension ___VARIABLE_ID___ViewController {
 
 // Sample state handling functions
 //
-//    func showIdleState() {
-//        tableView.refreshControl?.endCurrentRefreshing()
+//    func updateToIdleState() {
+//        collectionView.refreshControl?.endCurrentRefreshing()
 //    }
 //
-//    func showLoadingState() {
+//    func updateToLoadingState() {
 //
 //    }
 //
-//    func showErrorState(error: AppError) {
-//        tableView.refreshControl?.endCurrentRefreshing()
+//    func updateToErrorState(error: AppError) {
+//        collectionView.refreshControl?.endCurrentRefreshing()
 //        if viewModel.currentState.sections.isEmpty {
 //
 //        } else {
@@ -163,8 +165,8 @@ extension ___VARIABLE_ID___ViewController {
 //        }
 //    }
 //
-//    func showEmptyState() {
-//        tableView.refreshControl?.endCurrentRefreshing()
+//    func updateToEmptyState() {
+//        collectionView.refreshControl?.endCurrentRefreshing()
 //    }
 
 }

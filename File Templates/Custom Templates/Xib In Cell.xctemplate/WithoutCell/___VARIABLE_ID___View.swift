@@ -1,4 +1,4 @@
-//___FILEHEADER___
+// ___FILEHEADER___
 
 import UIKit
 
@@ -14,7 +14,7 @@ final class ___VARIABLE_ID___View: UIView {
 
     // MARK: - Variables
 
-    private var model: Model? 
+    private var model: Model?
 
     // MARK: - Lifecycle
 

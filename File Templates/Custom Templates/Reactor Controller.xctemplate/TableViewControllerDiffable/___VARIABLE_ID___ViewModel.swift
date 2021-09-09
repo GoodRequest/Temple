@@ -115,6 +115,7 @@ extension ___VARIABLE_ID___ViewModel {
 
     func reduce(state: State, mutation: Mutation) -> State {
         var state = state
+
 // Switch over mutations when using more than one mutation
 //
 //        switch mutation {
