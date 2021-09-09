@@ -10,6 +10,8 @@
 		<dict>
 			<key>Path</key>
 			<string>Podfile</string>
+			<key>Group</key>
+			<string>Resources</string>
 		</dict>
 	</dict>
 	<key>Identifier</key>

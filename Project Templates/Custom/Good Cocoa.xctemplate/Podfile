@@ -4,5 +4,6 @@ target '___PACKAGENAME___' do
   use_frameworks!
 
   pod 'SwiftGen'
+  pod 'SwiftLint'
   
 end
