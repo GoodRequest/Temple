@@ -19,15 +19,17 @@ final class ___VARIABLE_ID___Coordinator: Coordinator<AppStep> {
     // MARK: - Constants
 
     private let di: DI
-    private let parentCoordinator: Coordinator<AppStep>
 
     // MARK: - Initializer
 
-    init(di: DependencyContainer,
-         parentCoordinator: Coordinator<AppStep>,
-         navigationController: UINavigationController?) {
+    init(
+        di: DependencyContainer,
+        parentCoordinator: Coordinator<AppStep>,
+        navigationController: UINavigationController = UINavigationController()
+    ) {
         self.di = di
-        self.parentCoordinator = parentCoordinator
+
+        super.init(rootViewController: navigationController, parentCoordinator: parentCoordinator)
     }
 
     // MARK: - Override
