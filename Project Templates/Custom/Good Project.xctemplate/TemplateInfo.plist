@@ -145,6 +145,15 @@
 				<string>SampleController</string>
 			</array>
 		</dict>
+		<key>Screens/BaseViewController.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Screens/BaseViewController.swift</string>
+			<key>Group</key>
+			<array>
+				<string>Screens</string>
+			</array>
+		</dict>
 		<key>Views/SampleView/SampleView.swift</key>
 		<dict>
 			<key>Path</key>
@@ -200,6 +209,7 @@
 		<string>Coordinators/Coordinator.swift</string>
 		<string>Coordinators/AppCoordinator.swift</string>
 		<string>Screens/SampleController/SampleViewController.swift</string>
+		<string>Screens/BaseViewController.swift</string>
 		<string>Views/SampleView/SampleView.swift</string>
 		<string>Resources/SwiftGen/swiftgen.yml</string>
 		<string>Resources/Colors.xcassets</string>
