@@ -32,6 +32,27 @@
 			</array>
 		</dict>
 
+		<dict>
+			<key>Identifier</key>
+			<string>VAR</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>VariableName</string>
+			<key>Description</key>
+			<string>The name of the variable when using the dependency</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Default</key>
+			<string>myAny+(Manager)</string>
+			<key>NotPersisted</key>
+			<true/>
+			<key>Nodes</key>
+			<array>
+				<string>Base</string>
+			</array>
+		</dict>
+		
 		<dict/>
 	</array>
 </dict>
