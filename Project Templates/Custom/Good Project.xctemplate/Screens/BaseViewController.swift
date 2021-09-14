@@ -21,8 +21,13 @@ import Combine
 
 class BaseViewController<T>: UIViewController {
 
+    // MARK: - Constants
+
     let viewModel: T
-    let cancellables = Set<AnyCancellable>()
+
+    // MARK: - Variables
+    
+    var cancellables = Set<AnyCancellable>()
 
     convenience init() {
         fatalError("init() has not been implemented")

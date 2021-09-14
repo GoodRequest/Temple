@@ -1,1 +1,1 @@
-../../../Components/reactorViewModel.swift
+../../../Components/reactorViewListModel.swift

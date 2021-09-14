@@ -1,6 +1,5 @@
 // ___FILEHEADER___
 
-import UIKitfefafeafaefeaf
 import GRProvider
 
 // MARK: - Section Factory
@@ -19,7 +18,7 @@ final class ___VARIABLE_ID___Factory {
 //
 //    }
 
-    struct Section: Sectionable, Equatable {
+    struct Section: Sectionable, Equatable, Hashable {
 
 //        var type: SectionType
         var items: [Item]

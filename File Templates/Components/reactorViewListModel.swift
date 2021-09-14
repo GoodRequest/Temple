@@ -10,6 +10,7 @@ final class ___VARIABLE_ID___ViewModel: GoodReactor {
     // MARK: - TypeAliases
 
     typealias DI = WithRequestManager
+    typealias Section = ___VARIABLE_ID___Factory.Section
 
     // MARK: - Enums
 
@@ -47,6 +48,7 @@ final class ___VARIABLE_ID___ViewModel: GoodReactor {
     struct State {
 
         var dataFetchingState: DataFetchingState?
+        var sections: [Section]
         var dataResponse: String?
 
     }
@@ -56,6 +58,7 @@ final class ___VARIABLE_ID___ViewModel: GoodReactor {
     internal let initialState: State
     internal let coordinator: GoodCoordinator<AppStep>
 
+    private let factory = ___VARIABLE_ID___Factory()
     private let di: DI
 
     // MARK: - Initialization
@@ -65,7 +68,8 @@ final class ___VARIABLE_ID___ViewModel: GoodReactor {
         self.coordinator = coordinator
 
         self.initialState = State(
-            dataFetchingState: nil
+            dataFetchingState: nil,
+            sections: []
         )
     }
 

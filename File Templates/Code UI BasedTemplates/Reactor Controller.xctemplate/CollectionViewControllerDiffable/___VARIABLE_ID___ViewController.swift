@@ -17,7 +17,6 @@ final class ___VARIABLE_ID___ViewController: BaseViewController<___VARIABLE_ID__
     // MARK: - Constants
 
     private let layoutComposer = ___VARIABLE_ID___LayoutComposer()
-    private let provider = GRDiffableCollectionViewProvider<Section>(collectionView: collectionView)
 
     private let collectionView = UICollectionView().then {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -29,7 +28,7 @@ final class ___VARIABLE_ID___ViewController: BaseViewController<___VARIABLE_ID__
     
     // MARK: - Variables
 
-    lazy var provider = GRDiffableCollectionViewProvider<Section>(collectionView: collectionView)
+    private lazy var provider = GRDiffableCollectionViewProvider<Section>(collectionView: collectionView)
 
 }
 

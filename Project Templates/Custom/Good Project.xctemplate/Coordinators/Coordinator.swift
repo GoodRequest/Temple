@@ -50,12 +50,8 @@ class Coordinator<Step>: GoodCoordinator<Step> {
     }
 
     init(rootViewController: UIViewController? = nil, parentCoordinator: GoodCoordinator<Step>? = nil) {
-        super.init(
-            parentCoordinator: parentCoordinator,
-            navigationController: rootViewController as? UINavigationController
-        )
+        super.init(parentCoordinator: parentCoordinator)
 
-        self.navigationController = rootNavigationController
         self.parentCoordinator = parentCoordinator
         self.rootViewController = rootViewController
     }
