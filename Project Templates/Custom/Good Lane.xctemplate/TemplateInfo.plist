@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key> <!--States the template type-->
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<!--States if the template is a standalone template or a part
+	of template used in a diffrent template. In this case it will
+	be hidden from the template wizzard-->
+	<key>Concrete</key>
+ 	<false/>
+	<key>Identifier</key>  <!--Template ID in the "template space"-->
+	<string>com.goodrequest.Fastlane</string>
+	<key>Definitions</key>  <!--Template variables-->
+	<dict>
+	<key>Resources/fastlane/Appfile</key>
+	<dict>
+		<key>Path</key>
+		<string>fastlane/Appfile</string>
+		<key>Group</key>
+		<array>
+			<string>Resources</string>
+			<string>fastlane</string>
+		</array>
+	</dict>
+	<key>Resources/fastlane/Fastfile</key>
+	<dict>
+		<key>Path</key>
+		<string>fastlane/Fastfile</string>
+		<key>Group</key>
+		<array>
+			<string>Resources</string>
+			<string>fastlane</string>
+		</array>
+	</dict>
+	<key>Resources/fastlane/Matchfile</key>
+	<dict>
+		<key>Path</key>
+		<string>fastlane/Matchfile</string>
+		<key>Group</key>
+		<array>
+			<string>Resources</string>
+			<string>fastlane</string>
+		</array>
+	</dict>
+	<key>Resources/fastlane/README.md</key>
+	<dict>
+		<key>Path</key>
+		<string>fastlane/README.md</string>
+		<key>Group</key>
+		<array>
+			<string>Resources</string>
+			<string>fastlane</string>
+		</array>
+	</dict>
+</dict>
+	<key>Options</key>  <!--"USER INPUT" options-->
+	<array>
+		<dict>
+			<key>Identifier</key> <!--Option ID-->
+			<string>fastlane</string>
+			<key>SortOrder</key>
+			<string>900</string>
+			<key>Name</key> <!--Field title-->
+			<string>Fastlane</string>
+			<key>Description</key> <!--Field tooltip-->
+			<string>Integrate CocoaPods template</string>
+			<key>Type</key> <!--Field type-->
+			<string>checkbox</string>
+			<key>Default</key> <!--Default value-->
+			<string>true</string>
+			<key>Units</key> <!--Field outcome-->
+			<dict>
+				<key>true</key>
+				<array>
+					<dict>
+						<key>Nodes</key>
+						<array>
+							<string>Resources/fastlane/Appfile</string>
+							<string>Resources/fastlane/Fastfile</string>
+							<string>Resources/fastlane/Matchfile</string>
+							<string>Resources/fastlane/README.md</string>
+						</array>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>Identifier</key>  <!--Option ID-->
+			<string>CERTIFICATE_OWNER</string>
+			<key>SortOrder</key>
+			<string>901</string>
+			<key>Required</key> <!--Required to fill in the field-->
+			<true/>
+			<key>RequiredOptions</key>
+			<dict>
+					<key>fastlane</key>
+					<string>true</string>
+			</dict>
+			<key>Name</key> <!--Field title-->
+			<string>Appstore admin email</string>
+			<key>Description</key> <!--Field tooltip-->
+			<string>Appstore admin priviledged to create distribution certificates</string>
+			<key>Type</key> <!--Field type-->
+			<string>text</string>
+			<key>Default</key> <!--Default value-->
+			<string>email@domain.com</string>
+			<key>NotPersisted</key> <!--Remember last filled in choice-->
+			<false/>
+		</dict>
+		<dict>
+			<key>Identifier</key>  <!--Option ID-->
+			<string>CERTIFICATE_REPO</string>
+			<key>SortOrder</key>
+			<string>902</string>
+			<key>Required</key> <!--Required to fill in the field-->
+			<false/>
+			<key>RequiredOptions</key>
+			<dict>
+					<key>fastlane</key>
+					<string>true</string>
+			</dict>
+			<key>Name</key> <!--Field title-->
+			<string>Fastlane Cert Repo</string>
+			<key>Description</key> <!--Field tooltip-->
+			<string>Will search repository for certificates</string>
+			<key>Type</key> <!--Field type-->
+			<string>text</string>
+			<key>Default</key> <!--Default value-->
+			<string>Repo url</string>
+			<key>NotPersisted</key> <!--Remember last filled in choice-->
+			<true/>
+		</dict>
+		<dict>
+			<key>Identifier</key>  <!--Option ID-->
+			<string>CERTIFICATE_BRANCH</string>
+			<key>SortOrder</key>
+			<string>903</string>
+			<key>Required</key> <!--Required to fill in the field-->
+			<true/>
+			<key>RequiredOptions</key>
+			<dict>
+					<key>fastlane</key>
+					<string>true</string>
+			</dict>
+			<key>Name</key> <!--Field title-->
+			<string>Certificate folder branch</string>
+			<key>Description</key> <!--Field tooltip-->
+			<string>Branch that will store the generated certificates</string>
+			<key>Type</key> <!--Field type-->
+			<string>text</string>
+			<key>Default</key> <!--Default value-->
+			<string>___PROJECTNAME___</string>
+			<key>NotPersisted</key> <!--Remember last filled in choice-->
+			<true/>
+		</dict>
+		<dict>
+			<key>Identifier</key>  <!--Option ID-->
+			<string>COMPANY_TEAM_ID</string>
+			<key>SortOrder</key>
+			<string>904</string>
+			<key>Required</key> <!--Required to fill in the field-->
+			<false/>
+			<key>RequiredOptions</key>
+			<dict>
+					<key>fastlane</key>
+					<string>true</string>
+			</dict>
+			<key>Name</key> <!--Field title-->
+			<string>Team ID of the devs</string>
+			<key>Description</key> <!--Field tooltip-->
+			<string>Will be added into the development build configurations</string>
+			<key>Type</key> <!--Field type-->
+			<string>text</string>
+			<key>Default</key> <!--Default value-->
+			<string>TeamID</string>
+			<key>NotPersisted</key> <!--Remember last filled in choice-->
+			<true/>
+		</dict>
+		<dict>
+			<key>Identifier</key>  <!--Option ID-->
+			<string>CLIENT_TEAM_ID</string>
+			<key>SortOrder</key>
+			<string>905</string>
+			<key>Required</key> <!--Required to fill in the field-->
+			<false/>
+			<key>RequiredOptions</key>
+			<dict>
+					<key>fastlane</key>
+					<string>true</string>
+			</dict>
+			<key>Name</key> <!--Field title-->
+			<string>Team ID of the client</string>
+			<key>Description</key> <!--Field tooltip-->
+			<string>Will be added into the release build configurations</string>
+			<key>Type</key> <!--Field type-->
+			<string>text</string>
+			<key>Default</key> <!--Default value-->
+			<string>TeamID</string>
+			<key>NotPersisted</key> <!--Remember last filled in choice-->
+			<true/>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,40 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+
+default_platform(:ios)
+
+goodrequest_team_id = "___VARIABLE_COMPANY_TEAM_ID___"
+goodrequest_bundle_id = "goodrequest.___PRODUCTNAME___"
+___VARIABLE_CERTIFICATE_BRANCH____team_id = "___VARIABLE_CLIENT_TEAM_ID___"
+___VARIABLE_CERTIFICATE_BRANCH____bundle_id ="___ORGANIZATIONNAME___.___PRODUCTNAME___"
+
+platform :ios do
+
+  lane :register_gr_devices do
+
+	register_devices(
+        		devices_file: "./fastlane/devices.txt",
+        		team_id: goodrequest_bundle_id
+    	)
+
+  end
+
+  lane :regenerate_certs do
+	
+	match(git_branch: "___VARIABLE_CERTIFICATE_BRANCH___", type: "development",	app_identifier: goodrequest_bundle_id, team_id:  goodrequest_team_id, force_for_new_devices: true)
+     	match(git_branch: "___VARIABLE_CERTIFICATE_BRANCH___", type: "appstore", app_identifier: goodrequest_bundle_id, team_id:  goodrequest_team_id)
+     	match(git_branch: "___VARIABLE_CERTIFICATE_BRANCH___", type: "development", app_identifier: ___VARIABLE_CERTIFICATE_BRANCH____bundle_id, team_id: ___VARIABLE_CERTIFICATE_BRANCH____team_id, force_for_new_devices: true)
+     	match(git_branch: "___VARIABLE_CERTIFICATE_BRANCH___", type: "appstore", app_identifier: ___VARIABLE_CERTIFICATE_BRANCH____bundle_id, team_id: ___VARIABLE_CERTIFICATE_BRANCH____team_id)
+
+  end
+
+  lane :fetch_certs do
+
+	match(git_branch: "___VARIABLE_CERTIFICATE_BRANCH___", type: "development",	readonly:true, app_identifier: goodrequest_bundle_id, team_id: goodrequest_team_id)
+     	match(git_branch: "___VARIABLE_CERTIFICATE_BRANCH___", type: "appstore",readonly:true, app_identifier: goodrequest_bundle_id, 	team_id: goodrequest_team_id)
+   	match(git_branch: "___VARIABLE_CERTIFICATE_BRANCH___", type: "development", readonly:true, app_identifier: ___VARIABLE_CERTIFICATE_BRANCH____bundle_id, 	team_id: ___VARIABLE_CERTIFICATE_BRANCH____team_id)
+     	match(git_branch: "___VARIABLE_CERTIFICATE_BRANCH___", type: "appstore", readonly:true, app_identifier: ___VARIABLE_CERTIFICATE_BRANCH____bundle_id, team_id: ___VARIABLE_CERTIFICATE_BRANCH____team_id)
+
+  end
+
+end

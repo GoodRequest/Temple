@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key> <!--States the template type-->
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<!--States if the template is a standalone template or a part
+	of template used in a diffrent template. In this case it will
+	be hidden from the template wizzard-->
+	<key>Concrete</key>
+ 	<false/>
+	<key>Identifier</key>  <!--Template ID in the "template space"-->
+	<string>com.goodrequest.Firebase</string>
+	<key>Definitions</key>  <!--Template variables-->
+	<dict>
+	<key>Application/Google/GoogleService-Info.plist</key>
+	<dict>
+		<key>Path</key>
+		<string>Google/GoogleService-Info.plist</string>
+		<key>Group</key>
+		<array>
+			<string>Application</string>
+			<string>Google</string>
+		</array>
+	</dict>
+</dict>
+	<key>Options</key>  <!--"USER INPUT" options-->
+	<array>
+		<dict>
+			<key>Identifier</key> <!--Option ID-->
+			<string>firebase</string>
+			<key>Name</key> <!--Field title-->
+			<string>Firebase</string>
+			<key>Description</key> <!--Field tooltip-->
+			<string>Integrate firebase</string>
+			<key>SortOrder</key> <!--Sorting priority-->
+			<integer>250</integer>
+			<key>Type</key> <!--Field type-->
+			<string>checkbox</string>
+			<key>Default</key> <!--Default value-->
+			<string>true</string>
+			<key>Units</key> <!--Field outcome-->
+			<dict>
+				<key>true</key>
+				<array>
+					<dict>
+						<key>Nodes</key>
+						<array>
+							<string>Application/Google/GoogleService-Info.plist</string>
+						</array>
+						<key>Targets</key>
+						<array>
+							<dict>
+								<key>TargetIdentifier</key>
+								<string>com.apple.dt.cocoaTouchApplicationTarget</string>
+								<key>BuildPhases</key>
+								<array>
+									<dict>
+										<key>Name</key>
+										<string>🔥 Run Firebase SDK</string>
+										<key>SortOrder</key>
+										<string>1</string>
+										<key>Class</key>
+										<string>ShellScript</string>
+										<key>ShellPath</key>
+										<string>/bin/sh</string>
+										<key>ShellScript</key>
+										<string>FIRE_BASE = "${PODS_ROOT}/FirebaseCrashlytics/run"
+
+if test -f "${FIRE_BASE}"; then
+    "${FIRE_BASE}"
+else
+    echo "warning: FireBase not installed, download from https://github.com/firebase/firebase-ios-sdk 😭😩🤦‍♂️"
+fi</string>
+									</dict>
+								</array>
+							</dict>
+						</array>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

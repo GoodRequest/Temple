@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key> <!--States the template type-->
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<!--States if the template is a standalone template or a part
+	of template used in a diffrent template. In this case it will
+	be hidden from the template wizzard-->
+	<key>Concrete</key>
+ 	<true/>
+	<key>TargetOnly</key>
+	<true/>
+	<key>Identifier</key>  <!--Template ID in the "template space"-->
+	<string>com.goodrequest.FirebaseConfigLink</string>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>TargetIdentifier</key>
+			<string>com.goodrequest.firebaseConfigLink</string>
+			<key>Name</key>
+			<string>Firebase Config Link</string>
+			<key>TargetType</key>
+			<string>Aggregate</string>
+			<key>BuildPhases</key>
+			<array>
+				<dict>
+					<key>Name</key>
+					<string>🔥⚙️🔗 Update GoogleService-Info with current scheme configuration version</string>
+					<key>SortOrder</key>
+					<string>1</string>
+					<key>Class</key>
+					<string>ShellScript</string>
+					<key>ShellPath</key>
+					<string>/bin/sh</string>
+					<key>ShellScript</key>
+					<string>cp "${SRCROOT}/${PRODUCT_NAME}/Application/Google/GoogleService-Info-$CONFIGURATION.plist" "${SRCROOT}/${PRODUCT_NAME}/Application/Google/GoogleService-Info.plist"</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

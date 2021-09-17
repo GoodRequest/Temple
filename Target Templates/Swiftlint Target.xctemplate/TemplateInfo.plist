@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key> <!--States the template type-->
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<!--States if the template is a standalone template or a part
+	of template used in a diffrent template. In this case it will
+	be hidden from the template wizzard-->
+	<key>Concrete</key>
+ 	<true/>
+	<key>TargetOnly</key>
+	<true/>
+	<key>Identifier</key>  <!--Template ID in the "template space"-->
+	<string>com.goodrequest.SwiftlintAggregate</string>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>TargetIdentifier</key>
+			<string>com.goodrequest.swiftlintTarget</string>
+			<key>Name</key>
+			<string>SwiftLint autocorrect</string>
+			<key>TargetType</key>
+			<string>Aggregate</string>
+			<key>BuildPhases</key>
+			<array>
+				<dict>
+					<key>Name</key>
+					<string>🧹 Autocorrect codestyle with SwiftLint</string>
+					<key>SortOrder</key>
+					<string>1</string>
+					<key>Class</key>
+					<string>ShellScript</string>
+					<key>ShellPath</key>
+					<string>/bin/sh</string>
+					<key>ShellScript</key>
+					<string>SWIFT_LINT="${PODS_ROOT}/SwiftLint/swiftlint"
+ SWIFT_LINT_CONFIG="${SRCROOT}/swiftlint/.swiftlint.yml"
+
+if test -f "${SWIFT_LINT}"; then
+    if test -f "${SWIFT_LINT_CONFIG}"; then
+        "${SWIFT_LINT}" autocorrect --config "${SWIFT_LINT_CONFIG}"
+    else
+        echo "warning: Swiflint configuration file missing make your the submodule is fetched 😭😩🤦‍♂️"
+    fi
+else
+    echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint 😭😩🤦‍♂️"
+fi</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

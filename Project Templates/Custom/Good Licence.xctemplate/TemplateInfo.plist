@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key> <!--States the template type-->
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<!--States if the template is a standalone template or a part
+	of template used in a diffrent template. In this case it will
+	be hidden from the template wizzard-->
+	<key>Concrete</key>
+ 	<false/>
+	<key>Identifier</key>  <!--Template ID in the "template space"-->
+	<string>com.goodrequest.License</string>
+	<key>Definitions</key>  <!--Template variables-->
+	<dict>
+	<key>Resources/license_generator/license-plist</key>
+	<dict>
+		<key>Path</key>
+		<string>license_generator/license-plist</string>
+		<key>Group</key>
+		<array>
+			<string>Resources</string>
+			<string>license_generator</string>
+		</array>
+	</dict>
+	<key>Application/Settings.bundle</key>
+	<dict>
+		<key>Path</key>
+		<string>Settings.bundle</string>
+		<key>Group</key>
+		<array>
+			<string>Application</string>
+		</array>
+	</dict>
+</dict>
+<key>Nodes</key>
+<array>
+	<string>Resources/license_generator/license-plist</string>
+	<string>Application/Settings.bundle</string>
+</array>
+<key>Targets</key>
+<array>
+	<dict>
+		<key>TargetIdentifier</key>
+		<string>com.apple.dt.cocoaTouchApplicationTarget</string>
+		<key>BuildPhases</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>📁 Run licence generator</string>
+				<key>SortOrder</key>
+				<string>1</string>
+				<key>Class</key>
+				<string>ShellScript</string>
+				<key>ShellPath</key>
+				<string>/bin/sh</string>
+				<key>ShellScript</key>
+				<string>"${PROJECT_DIR}"/"${PROJECT_NAME}"/Resources/license_generator/license-plist --package-path "${PROJECT_NAME}".xcworkspace/xcshareddata/swiftpm/Package.swift --suppress-opening-directory</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>📁 Copy licence data into settings bundle</string>
+				<key>SortOrder</key>
+				<string>1</string>
+				<key>Class</key>
+				<string>ShellScript</string>
+				<key>ShellPath</key>
+				<string>/bin/sh</string>
+				<key>ShellScript</key>
+				<string>cp -R "${SRCROOT}/com.mono0926.LicensePlist.Output/" "${SRCROOT}/${PROJECT_NAME}/Application/Settings.bundle/"
+					rm -rf "${SRCROOT}/com.mono0926.LicensePlist.Output/"</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</dict>
+</plist>
