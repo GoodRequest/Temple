@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Concrete</key>
+	<true/>
+	<key>TargetOnly</key>
+	<true/>
+	<key>Identifier</key>
+	<string>com.goodrequest.SwiftlintAggregate</string>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>TargetIdentifier</key>
+			<string>com.goodrequest.swiftlintTarget</string>
+			<key>Name</key>
+			<string>SwiftLint autocorrect</string>
+			<key>TargetType</key>
+			<string>Aggregate</string>
+			<key>BuildPhases</key>
+			<array>
+				<dict>
+					<key>Name</key>
+					<string>🧼 Autocorrect codestyle with SwiftLint</string>
+					<key>Class</key>
+					<string>ShellScript</string>
+					<key>ShellPath</key>
+					<string>/bin/sh</string>
+					<key>ShellScript</key>
+					<string>SWIFT_LINT=&quot;${PODS_ROOT}/SwiftLint/swiftlint&quot;
+ SWIFT_LINT_CONFIG=&quot;${SRCROOT}/swiftlint/.swiftlint.yml&quot;
+
+if test -f &quot;${SWIFT_LINT}&quot;; then
+    if test -f &quot;${SWIFT_LINT_CONFIG}&quot;; then
+        &quot;${SWIFT_LINT}&quot; autocorrect --config &quot;${SWIFT_LINT_CONFIG}&quot;
+    else
+        echo &quot;warning: Swiflint configuration file missing make your the submodule is fetched 😭😩🤦‍♂️&quot;
+    fi
+else
+    echo &quot;warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint 😭😩🤦‍♂️&quot;
+fi</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

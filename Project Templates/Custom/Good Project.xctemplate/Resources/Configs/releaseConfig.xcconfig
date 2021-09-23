@@ -1,0 +1,15 @@
+// ___FILEHEADER___
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE
+SWIFT_COMPILATION_MODE = wholemodule
+GCC_OPTIMIZATION_LEVEL = s // fastest smallest
+EXCLUDED_ARCHS[sdk=iphonesimulator*] = arm64
+DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"
+ENABLE_TESTABILITY = NO
+VALIDATE_BUILD_PRODUCT = YES
+ASSET_CATALOG_APP_ICON_SET_NAME = AppIcon.release
+IPHONEOS_DEPLOYMENT_TARGET = ___VARIABLE_VERSION___
+SWIFT_OPTIMIZATION_LEVEL = "-Osize"

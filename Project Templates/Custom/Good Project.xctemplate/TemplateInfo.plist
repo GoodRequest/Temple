@@ -6,13 +6,33 @@
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 	<key>Identifier</key>
 	<string>com.apple.dt.unit.singleViewApplication</string>
+	<key>Platforms</key>
+	<array>
+		<string>com.apple.platform.iphoneos</string>
+	</array>
 	<key>Ancestors</key>
 	<array>
 		<string>com.goodrequest.cocoaTouchApplicationBase</string>
 		<string>com.goodrequest.CocoaPods</string>
+		<string>com.goodrequest.Fastlane</string>
+		<string>com.goodrequest.License</string>
+		<string>com.goodrequest.Firebase</string>
 	</array>
 	<key>Concrete</key>
 	<true/>
+	<key>ProjectOnly</key>
+	<true/>
+	<key>AssociatedTargetSpecification</key>
+	<dict>
+		<key>AllowablePlatforms</key>
+		<array>
+			<string>com.apple.platform.iphoneos</string>
+		</array>
+		<key>AssociatedTargetIsDependent</key>
+		<true/>
+		<key>AssociatedTargetNeedsProductBuildPhaseInjection</key>
+		<true/>
+	</dict>
 	<key>Definitions</key>
 	<dict>
 		<key>Application/AppDelegate.swift</key>
@@ -182,6 +202,15 @@
 				<string>Resources</string>
 			</array>
 		</dict>
+		<key>Resources/Localizable.strings</key>
+		<dict>
+			<key>Path</key>
+			<string>Resources/Localizable.strings</string>
+			<key>Group</key>
+			<array>
+				<string>Resources</string>
+			</array>
+		</dict>
 		<key>Resources/SwiftGen/swiftgen.yml</key>
 		<dict>
 			<key>Path</key>
@@ -190,6 +219,56 @@
 			<array>
 				<string>Resources</string>
 				<string>SwiftGen</string>
+			</array>
+		</dict>
+		<key>Resources/SwiftGen/Colors.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Resources/SwiftGen/Colors.swift</string>
+			<key>Group</key>
+			<array>
+				<string>Resources</string>
+				<string>SwiftGen</string>
+			</array>
+		</dict>
+		<key>Resources/SwiftGen/Assets.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Resources/SwiftGen/Assets.swift</string>
+			<key>Group</key>
+			<array>
+				<string>Resources</string>
+				<string>SwiftGen</string>
+			</array>
+		</dict>
+		<key>Resources/SwiftGen/Localizable.swift</key>
+		<dict>
+			<key>Path</key>
+			<string>Resources/SwiftGen/Localizable.swift</string>
+			<key>Group</key>
+			<array>
+				<string>Resources</string>
+				<string>SwiftGen</string>
+			</array>
+		</dict>
+		<key>Resources/Configs/devConfig.xcconfig</key>
+		<dict>
+			<key>Path</key>
+			<string>Resources/Configs/devConfig.xcconfig</string>
+			<key>Group</key>
+			<array>
+				<string>Resources</string>
+				<string>Configs</string>
+			</array>
+		</dict>
+		<key>Resources/Configs/releaseConfig.xcconfig</key>
+		<dict>
+			<key>Path</key>
+			<string>Resources/Configs/releaseConfig.xcconfig</string>
+			<key>Group</key>
+			<array>
+				<string>Resources</string>
+				<string>Configs</string>
 			</array>
 		</dict>
 	</dict>
@@ -214,8 +293,107 @@
 		<string>Resources/SwiftGen/swiftgen.yml</string>
 		<string>Resources/Colors.xcassets</string>
 		<string>Resources/Assets.xcassets</string>
-		<string>Info.plist:UIMainStoryboardFile</string>
-		<string>Info.plist:UIApplicationSceneManifest:UISceneStoryboardFile</string>
+		<string>Resources/Localizable.strings</string>
+		<string>Resources/SwiftGen/Assets.swift</string>
+		<string>Resources/SwiftGen/Colors.swift</string>
+		<string>Resources/SwiftGen/Localizable.swift</string>
+		<string>Resources/Configs/devConfig.xcconfig</string>
+		<string>Resources/Configs/releaseConfig.xcconfig</string>
 	</array>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>SharedSettings</key>
+			<dict>
+					<key>INFOPLIST_FILE</key>
+					<string>${PRODUCT_NAME}/Application/Info.plist</string>
+			</dict>
+			<key>TargetIdentifier</key>
+			<string>com.apple.dt.cocoaTouchApplicationTarget</string>
+			<key>BuildPhases</key>
+			<array>
+				<dict>
+					<key>Name</key>
+					<string>🛠 Generate enums with SwiftGen</string>
+					<key>SortOrder</key>
+					<string>1</string>
+					<key>Class</key>
+					<string>ShellScript</string>
+					<key>ShellPath</key>
+					<string>/bin/sh</string>
+					<key>ShellScript</key>
+					<string>SWIFT_GEN="${PODS_ROOT}/SwiftGen/bin/swiftgen"
+SWIFT_GEN_CONFIG="${PROJECT_DIR}/${PROJECT_NAME}/Resources/SwiftGen/swiftgen.yml"
+
+if test -f "${SWIFT_GEN}"; then
+    if test -f "${SWIFT_GEN_CONFIG}"; then
+        "${SWIFT_GEN}" config run --verbose --config "${SWIFT_GEN_CONFIG}"
+    else
+        echo "warning: Swifgen configuration file missing make sure the path "$SWIFT_GEN_CONFIG" contains the file 😭😩🤦‍♂️"
+    fi
+else
+    echo "warning: SwiftGen not installed, download from https://github.com/SwiftGen/SwiftGen 😭😩🤦‍♂️"
+fi</string>
+				</dict>
+				<dict>
+					<key>Name</key>
+					<string>🧹 Validate codestyle with AnyLint</string>
+					<key>SortOrder</key>
+					<string>1</string>
+					<key>Class</key>
+					<string>ShellScript</string>
+					<key>ShellPath</key>
+					<string>/bin/sh</string>
+					<key>ShellScript</key>
+					<string>ANY_LINT_CONFIG="${SRCROOT}/Lint/anylintValidation.swift"
+
+if which anylint > /dev/null; then
+    if test -f "${ANY_LINT_CONFIG}"; then
+        anylint -x --path "${ANY_LINT_CONFIG}"
+    else
+        echo "warning: AnyLint configuration file missing make your the submodule is fetched 😭😩🤦‍♂️"
+    fi
+else
+    echo "warning: AnyLint not installed, download it from https://github.com/Flinesoft/AnyLint to your local machine 😭😩🤦‍♂️"
+fi				</string>
+				</dict>
+				<dict>
+					<key>Name</key>
+					<string>🧹 Validate codestyle with SwiftLint</string>
+					<key>SortOrder</key>
+					<string>1</string>
+					<key>Class</key>
+					<string>ShellScript</string>
+					<key>ShellPath</key>
+					<string>/bin/sh</string>
+					<key>ShellScript</key>
+					<string>SWIFT_LINT="${PODS_ROOT}/SwiftLint/swiftlint"
+ SWIFT_LINT_CONFIG="${SRCROOT}/swiftlint/.swiftlint.yml"
+
+if test -f "${SWIFT_LINT}"; then
+    if test -f "${SWIFT_LINT_CONFIG}"; then
+        "${SWIFT_LINT}" --config "${SWIFT_LINT_CONFIG}"
+    else
+        echo "warning: Swiflint configuration file missing make your the submodule is fetched 😭😩🤦‍♂️"
+    fi
+else
+    echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint 😭😩🤦‍♂️"
+fi				</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>Project</key>
+	<dict>
+			<key>SDK</key>
+			<string>iphoneos</string>
+			<key>SharedSettings</key>
+			<dict>
+					<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+					<string>___VARIABLE_VERSION___</string>
+					<key>SWIFT_VERSION</key>
+					<string>5.0</string>
+			</dict>
+	</dict>
 </dict>
 </plist>

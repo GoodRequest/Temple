@@ -1,0 +1,40 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+
+default_platform(:ios)
+
+dev_team_id = ""
+dev_team_bundle_id = ""
+client_team_id = ""
+client_team_bundle_id = ""
+
+platform :ios do
+
+  lane :register_devices do
+
+	register_devices(
+        		devices_file: "./fastlane/devices.txt",
+        		team_id: dev_team_bundle_id
+    	)
+
+  end
+
+  lane :regenerate_certs do
+	
+	match(git_branch: "", type: "development",	app_identifier: dev_team_bundle_id, team_id:  dev_team_id, force_for_new_devices: true)
+     	match(git_branch: "", type: "appstore", app_identifier: dev_team_bundle_id, team_id:  dev_team_id)
+     	match(git_branch: "", type: "development", app_identifier: client_team_bundle_id, team_id: client_team_id, force_for_new_devices: true)
+     	match(git_branch: "", type: "appstore", app_identifier: client_team_bundle_id, team_id: client_team_id)
+
+  end
+
+  lane :fetch_certs do
+
+	match(git_branch: "", type: "development",	readonly:true, app_identifier: dev_team_bundle_id, team_id: dev_team_id)
+     	match(git_branch: "", type: "appstore",readonly:true, app_identifier: dev_team_bundle_id, 	team_id: dev_team_id)
+   	match(git_branch: "", type: "development", readonly:true, app_identifier: client_team_bundle_id, 	team_id: client_team_id)
+     	match(git_branch: "", type: "appstore", readonly:true, app_identifier: client_team_bundle_id, team_id: client_team_id)
+
+  end
+
+end

@@ -10,8 +10,6 @@
     <array>
         <string>com.apple.dt.unit.applicationBase</string>
         <string>com.apple.dt.unit.iosBase</string>
-        <string>com.apple.dt.unit.languageChoice.app.iOS</string>
-        <string>com.apple.dt.unit.appLifecycle.iOS</string>
     </array>
     <key>Targets</key>
     <array>
@@ -68,68 +66,33 @@
                 </dict>
             </dict>
         </dict>
-
-        <dict>
-            <key>Identifier</key>
-            <string>appLifecycle</string>
-            <key>Units</key>
-            <dict>
-                <key>Cocoa</key>
-                <dict>
-                    <key>Nodes</key>
-                    <array>
-                        <string>Info.plist:LaunchScreen</string>
-                        <string>Base.lproj/LaunchScreen.storyboard</string>
-                    </array>
-                </dict>
-            </dict>
-        </dict>
     </array>
     <key>Nodes</key>
     <array>
-        <string>Info.plist:iPhone</string>
-        <string>Info.plist:UIRequiredDeviceCapabilities:base</string>
-        <string>Info.plist:UISupportedInterfaceOrientations~iPhone</string>
-        <string>Info.plist:UISupportedInterfaceOrientations~iPad</string>
-        <string>Info.plist:UIApplicationSupportsIndirectInputEvents</string>
+      <string>Application/LaunchScreen.storyboard</string>
+      <string>Application/Info.plist:LaunchScreen</string>
     </array>
     <key>Definitions</key>
     <dict>
-        <key>Info.plist:iPhone</key>
-        <string><![CDATA[<key>LSRequiresIPhoneOS</key><true/>]]></string>
-        <key>Info.plist:UIRequiredDeviceCapabilities</key>
+        <key>Application/Info.plist</key>
         <dict>
-            <key>Beginning</key>
-            <string><![CDATA[<key>UIRequiredDeviceCapabilities</key><array>]]></string>
-            <key>End</key>
-            <string><![CDATA[</array>]]></string>
-            <key>Indent</key>
-            <integer>1</integer>
+            <key>Path</key>
+            <string>Info.plist</string>
+            <key>Group</key>
+            <array>
+              <string>Application</string>
+            </array>
+            <key>SortOrder</key>
+            <integer>100</integer>
         </dict>
-        <key>Info.plist:UIRequiredDeviceCapabilities:base</key>
-        <string><![CDATA[<string>armv7</string>]]></string>
-        <key>Info.plist:statusBarTintForNavBar</key>
-        <string>
-            <![CDATA[<key>UIStatusBarTintParameters</key>
-            <dict>
-                <key>UINavigationBar</key>
-                <dict>
-                    <key>Style</key>
-                    <string>UIBarStyleDefault</string>
-                    <key>Translucent</key>
-                    <false/>
-                </dict>
-            </dict>
-            ]]>
-        </string>
-        <key>Info.plist:UIApplicationSupportsIndirectInputEvents</key>
-        <string><![CDATA[<key>UIApplicationSupportsIndirectInputEvents</key><true/>]]></string>
-        <key>Info.plist:LaunchScreen</key>
-        <string><![CDATA[<key>UILaunchStoryboardName</key><string>LaunchScreen</string>]]></string>
-        <key>Base.lproj/LaunchScreen.storyboard</key>
+        <key>Application/LaunchScreen.storyboard</key>
         <dict>
             <key>Path</key>
             <string>LaunchScreen.storyboard</string>
+            <key>Group</key>
+            <array>
+              <string>Application</string>
+            </array>
             <key>SortOrder</key>
             <integer>101</integer>
         </dict>

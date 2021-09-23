@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key> <!--States the template type-->
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<!--States if the template is a standalone template or a part
+	of template used in a diffrent template. In this case it will
+	be hidden from the template wizzard-->
+	<key>Concrete</key>
+ 	<false/>
+	<key>Identifier</key>  <!--Template ID in the "template space"-->
+	<string>com.goodrequest.Fastlane</string>
+	<key>Definitions</key>  <!--Template variables-->
+	<dict>
+	<key>Resources/fastlane/Appfile</key>
+	<dict>
+		<key>Path</key>
+		<string>fastlane/Appfile</string>
+		<key>Group</key>
+		<array>
+			<string>Resources</string>
+			<string>fastlane</string>
+		</array>
+	</dict>
+	<key>Resources/fastlane/Fastfile</key>
+	<dict>
+		<key>Path</key>
+		<string>fastlane/Fastfile</string>
+		<key>Group</key>
+		<array>
+			<string>Resources</string>
+			<string>fastlane</string>
+		</array>
+	</dict>
+	<key>Resources/fastlane/Matchfile</key>
+	<dict>
+		<key>Path</key>
+		<string>fastlane/Matchfile</string>
+		<key>Group</key>
+		<array>
+			<string>Resources</string>
+			<string>fastlane</string>
+		</array>
+	</dict>
+	<key>Resources/fastlane/README.md</key>
+	<dict>
+		<key>Path</key>
+		<string>fastlane/README.md</string>
+		<key>Group</key>
+		<array>
+			<string>Resources</string>
+			<string>fastlane</string>
+		</array>
+	</dict>
+</dict>
+	<key>Options</key>  <!--"USER INPUT" options-->
+	<array>
+		<dict>
+			<key>Identifier</key> <!--Option ID-->
+			<string>fastlane</string>
+			<key>SortOrder</key>
+			<string>900</string>
+			<key>Name</key> <!--Field title-->
+			<string>Fastlane</string>
+			<key>Description</key> <!--Field tooltip-->
+			<string>Integrate CocoaPods template</string>
+			<key>Type</key> <!--Field type-->
+			<string>checkbox</string>
+			<key>Default</key> <!--Default value-->
+			<string>true</string>
+			<key>Units</key> <!--Field outcome-->
+			<dict>
+				<key>true</key>
+				<array>
+					<dict>
+						<key>Nodes</key>
+						<array>
+							<string>Resources/fastlane/Appfile</string>
+							<string>Resources/fastlane/Fastfile</string>
+							<string>Resources/fastlane/Matchfile</string>
+							<string>Resources/fastlane/README.md</string>
+						</array>
+					</dict>
+				</array>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,15 @@
+// ___FILEHEADER___
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG
+SWIFT_COMPILATION_MODE = incremental
+GCC_OPTIMIZATION_LEVEL = 0 // none
+EXCLUDED_ARCHS[sdk=iphonesimulator*] = arm64
+DEBUG_INFORMATION_FORMAT = dwarf
+ENABLE_TESTABILITY = YES
+VALIDATE_BUILD_PRODUCT = NO
+ASSET_CATALOG_APP_ICON_SET_NAME = AppIcon.dev
+IPHONEOS_DEPLOYMENT_TARGET = ___VARIABLE_VERSION___
+SWIFT_OPTIMIZATION_LEVEL = "-Onone"

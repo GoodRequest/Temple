@@ -1,7 +1,7 @@
 // ___FILEHEADER___
 
 import UIKit
-import GoodExtensions
+import GoodExtensions // https://github.com/GoodRequest/GoodIOSExtensions.git
 
 enum AppStep {}
 
