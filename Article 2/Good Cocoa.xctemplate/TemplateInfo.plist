@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key> <!--States the template type-->
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<!--States if the template is a standalone template or a part
+	of template used in a diffrent template. In this case it will
+	be hidden from the template wizzard-->
+	<key>Concrete</key>
+ 	<false/>
+	<key>Identifier</key>  <!--Template ID in the "template space"-->
+	<string>com.goodrequest.CocoaPods</string>
+	<key>Definitions</key>  <!--Template variables-->
+	<dict>
+		<key>../Podfile</key>
+		<dict>
+			<key>Path</key>
+			<string>Podfile</string>
+			<key>Group</key>
+			<string>Resources</string>
+		</dict>
+	</dict>
+	<key>Options</key>  <!--"USER INPUT" options-->
+	<array>
+		<dict>
+			<key>Identifier</key>  <!--Option ID-->
+			<string>VERSION</string>
+			<key>Required</key> <!--Required to fill in the field-->
+			<true/>
+			<key>Name</key> <!--Field title-->
+			<string>iOS Min. Version</string>
+			<key>Description</key> <!--Field tooltip-->
+			<string>Minimum supported iOS version</string>
+			<key>Type</key> <!--Field type-->
+			<string>text</string>
+			<key>Default</key> <!--Default value-->
+			<string>13.0</string>
+			<key>NotPersisted</key> <!--Remember last filled in choice-->
+			<true/>
+		</dict>
+	</array>
+	<key>Nodes</key>
+	<array>
+		<string>../Podfile</string>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,12 @@
+platform :ios, '___VARIABLE_VERSION___'
+
+target '___PACKAGENAME___' do
+  use_frameworks!
+
+  pod 'SwiftGen'
+  pod 'SwiftLint'
+  pod 'LicensePlist'
+  pod 'Firebase/Analytics'
+  pod 'FirebaseCrashlytics'
+
+end
