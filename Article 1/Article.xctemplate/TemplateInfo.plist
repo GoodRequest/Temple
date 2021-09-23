@@ -15,6 +15,13 @@
  <true/>
  <key>Definitions</key>
  <dict>
+   <key>Helpers/TypeAliases.swift</key>
+   <dict>
+     <key>Path</key>
+     <string>Helpers/TypeAliases.swift</string>
+     <key>Group</key>
+     <string>Helpers</string>
+   </dict>
   <key>Application/AppDelegate.swift</key>
   <dict>
    <key>Path</key>
@@ -142,6 +149,7 @@
   <string>Application/AppDelegate.swift</string>
   <string>Models/Response/SampleResponse.swift</string>
   <string>Models/Request/SampleRequest.swift</string>
+  <string>Helpers/TypeAliases.swift</string>
   <string>Managers/Dependency/DependencyContainer.swift</string>
   <string>Managers/Request/RequestManager.swift</string>
   <string>Managers/Request/RequestManagerType.swift</string>
@@ -153,5 +161,13 @@
   <string>Resources/Colors.xcassets</string>
   <string>Resources/Assets.xcassets</string>
  </array>
+ <key>Project</key>
+ <dict>
+     <key>SharedSettings</key>
+     <dict>
+         <key>SWIFT_VERSION</key>
+         <string>5.0</string>
+     </dict>
+ </dict>
  </dict>
 </plist>
