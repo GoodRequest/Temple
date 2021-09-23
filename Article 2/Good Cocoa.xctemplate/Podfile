@@ -5,8 +5,5 @@ target '___PACKAGENAME___' do
 
   pod 'SwiftGen'
   pod 'SwiftLint'
-  pod 'LicensePlist'
-  pod 'Firebase/Analytics'
-  pod 'FirebaseCrashlytics'
 
 end
