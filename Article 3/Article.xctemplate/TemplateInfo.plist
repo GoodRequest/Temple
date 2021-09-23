@@ -8,7 +8,7 @@
  <string>com.goodrequest.singleViewApplication</string>
  <key>Ancestors</key>
  <array>
-	  <string>com.apple.dt.unit.applicationBase</string>
+	 <string>com.apple.dt.unit.applicationBase</string>
 	  <string>com.apple.dt.unit.iosBase</string>
     <string>com.goodrequest.CocoaPods</string> <!--ID of the Pod template-->
 	</array>
@@ -16,13 +16,6 @@
  <true/>
  <key>Definitions</key>
  <dict>
-   <key>Helpers/TypeAliases.swift</key>
-   <dict>
-     <key>Path</key>
-     <string>Helpers/TypeAliases.swift</string>
-     <key>Group</key>
-     <string>Helpers</string>
-   </dict>
   <key>Application/AppDelegate.swift</key>
   <dict>
    <key>Path</key>
@@ -184,22 +177,27 @@
       <string>SwiftGen</string>
     </array>
   </dict>
+  <key>Helpers/TypeAliases.swift</key>
+  <dict>
+    <key>Path</key>
+    <string>Helpers/TypeAliases.swift</string>
+    <key>Group</key>
+    <string>Helpers</string>
+  </dict>
   <key>Resources/.swiftlint.yml</key>
   <dict>
     <key>Path</key>
     <string>Resources/.swiftlint.yml</string>
     <key>Group</key>
-    <array>
-      <string>Resources</string>
-    </array>
+    <string>Resources</string>
   </dict>
  </dict>
  <key>Nodes</key>
  <array>
+  <string>Helpers/TypeAliases.swift</string>
   <string>Application/AppDelegate.swift</string>
   <string>Models/Response/SampleResponse.swift</string>
   <string>Models/Request/SampleRequest.swift</string>
-  <string>Helpers/TypeAliases.swift</string>
   <string>Managers/Dependency/DependencyContainer.swift</string>
   <string>Managers/Request/RequestManager.swift</string>
   <string>Managers/Request/RequestManagerType.swift</string>
@@ -260,7 +258,7 @@ fi</string>
 					<string>/bin/sh</string>
 					<key>ShellScript</key>
 					<string>SWIFT_LINT="${PODS_ROOT}/SwiftLint/swiftlint"
- SWIFT_LINT_CONFIG="${SRCROOT}/Resources/.swiftlint.yml"
+ SWIFT_LINT_CONFIG="${SRCROOT}/${PROJECT_NAME}/Resources/.swiftlint.yml"
 
 if test -f "${SWIFT_LINT}"; then
     if test -f "${SWIFT_LINT_CONFIG}"; then
@@ -270,18 +268,18 @@ if test -f "${SWIFT_LINT}"; then
     fi
 else
     echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint 😭😩🤦‍♂️"
-fi				</string>
+fi</string>
 				</dict>
 			</array>
 		</dict>
 	</array>
- <key>Project</key>
- <dict>
-     <key>SharedSettings</key>
-     <dict>
-         <key>SWIFT_VERSION</key>
-         <string>5.0</string>
-     </dict>
- </dict>
+  <key>Project</key>
+	<dict>
+			<key>SharedSettings</key>
+			<dict>
+					<key>SWIFT_VERSION</key>
+					<string>5.0</string>
+			</dict>
+	</dict>
  </dict>
 </plist>

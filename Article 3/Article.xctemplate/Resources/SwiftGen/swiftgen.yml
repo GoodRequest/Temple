@@ -1,0 +1,20 @@
+#strings:
+#    inputs: ${PROJECT_DIR}/${PROJECT_NAME}/Resources/en.lproj/Localizable.strings
+#    outputs:
+#        - templateName: structured-swift5
+#          output: ${PROJECT_DIR}/${PROJECT_NAME}/Resources/SwiftGen/Localizable.swift
+#          params:
+#            enumName: L
+xcassets:
+  - inputs: ${PROJECT_DIR}/${PROJECT_NAME}/Resources/Assets.xcassets
+    outputs:
+      - templateName: swift5
+        output: ${PROJECT_DIR}/${PROJECT_NAME}/Resources/SwiftGen/Assets.swift
+        params:
+          enumName: Asset
+  - inputs: ${PROJECT_DIR}/${PROJECT_NAME}/Resources/Colors.xcassets
+    outputs:
+      - templateName: swift5
+        output: ${PROJECT_DIR}/${PROJECT_NAME}/Resources/SwiftGen/Colors.swift
+        params:
+          enumName: Color
