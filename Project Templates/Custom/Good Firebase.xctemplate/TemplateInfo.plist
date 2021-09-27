@@ -65,8 +65,8 @@
 										<key>ShellPath</key>
 										<string>/bin/sh</string>
 										<key>ShellScript</key>
-										<string>FIRE_BASE = "${PODS_ROOT}/FirebaseCrashlytics/run"
-
+										<string>#FIRE_BASE="${PODS_ROOT}/FirebaseCrashlytics/run"
+#REMOVE COMMENTED LINE AFTER YOU GOOGLE.plist file is valid in place
 if test -f "${FIRE_BASE}"; then
     "${FIRE_BASE}"
 else

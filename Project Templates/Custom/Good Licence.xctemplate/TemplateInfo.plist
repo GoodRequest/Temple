@@ -13,16 +13,6 @@
 	<string>com.goodrequest.License</string>
 	<key>Definitions</key>  <!--Template variables-->
 	<dict>
-	<key>Resources/license_generator/license-plist</key>
-	<dict>
-		<key>Path</key>
-		<string>license_generator/license-plist</string>
-		<key>Group</key>
-		<array>
-			<string>Resources</string>
-			<string>license_generator</string>
-		</array>
-	</dict>
 	<key>Application/Settings.bundle</key>
 	<dict>
 		<key>Path</key>
@@ -35,7 +25,6 @@
 </dict>
 <key>Nodes</key>
 <array>
-	<string>Resources/license_generator/license-plist</string>
 	<string>Application/Settings.bundle</string>
 </array>
 <key>Targets</key>
@@ -55,7 +44,13 @@
 				<key>ShellPath</key>
 				<string>/bin/sh</string>
 				<key>ShellScript</key>
-				<string>"${PROJECT_DIR}"/"${PROJECT_NAME}"/Resources/license_generator/license-plist --package-path "${PROJECT_NAME}".xcworkspace/xcshareddata/swiftpm/Package.swift --suppress-opening-directory</string>
+				<string>PLIST_PATH="${PODS_ROOT}/LicensePlist/license-plist"
+
+if test -f "${PLIST_PATH}"; then
+    "${PLIST_PATH}" --package-path "${PROJECT_NAME}.xcworkspace/xcshareddata/swiftpm/Package.swift" --suppress-opening-directory
+else
+    echo "warning: LicencePlist not installed, download from https://github.com/mono0926/LicensePlist 😭😩🤦‍♂️"
+fi</string>
 			</dict>
 			<dict>
 				<key>Name</key>
