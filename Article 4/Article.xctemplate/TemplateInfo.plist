@@ -11,6 +11,7 @@
 	 <string>com.apple.dt.unit.applicationBase</string>
 	  <string>com.apple.dt.unit.iosBase</string>
     <string>com.goodrequest.CocoaPods</string> <!--ID of the Pod template-->
+    <string>com.goodrequest.License</string>
 	</array>
  <key>Concrete</key>
  <true/>
