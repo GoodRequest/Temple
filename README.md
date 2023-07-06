@@ -64,5 +64,22 @@ Directory where to find already existing Xcode templates to take inspiration fro
 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File
 ```
 
+## Loading Dependencies with SPM
+
+The template automatically generated build tools package. What you want to do now is to connect it to the project as a local package. 
+
+1. **Open** the **Package.swift** you your **project root** and **uncomment** the package.swift. This will cause a compile error, but only because its still now added as a defacto package despite the fact that it is already in the right place in the project.
+2. **Delete** the **reference** to these two package files.
+3. Now you want to **add** a **local package** of good dependencies. Open the add package prompt for the project and click add local project. Point to the packages folder in the project root and find good dependencies. Once you select them hit add package and you are good to go
+![Logo](Resources/dependencies.gif)
+
+4. As soon as the packages are fetched add the package as framework
+
+![Logo](Resources/frameworks.png)
+
+### External Dependencies
+
+All external dependencies should be primarily added via SPM via a local package or the projects package interface. It’s up to you which method you choose.
+
 ## License
 GoodIOSExtensions repository is released under the MIT license. See [LICENSE](LICENSE.md) for details.

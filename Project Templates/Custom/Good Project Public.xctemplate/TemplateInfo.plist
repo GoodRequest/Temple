@@ -5,7 +5,7 @@
 	<key>Kind</key>
 	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
 	<key>Identifier</key>
-	<string>com.apple.dt.unit.singleViewApplication</string>
+	<string>com.apple.dt.unit.singleViewApplicationPublic</string>
 	<key>Platforms</key>
 	<array>
 		<string>com.apple.platform.iphoneos</string>
@@ -271,6 +271,13 @@
 				<string>Configs</string>
 			</array>
 		</dict>
+		<key>../Packages/GoodDependencies/Package.swift</key>
+		<dict>
+			<key>PathType</key>
+			<string>Project</string>
+			<key>Path</key>
+			<string>Package.swift</string>
+		</dict>
 	</dict>
 	<key>Nodes</key>
 	<array>
@@ -299,6 +306,8 @@
 		<string>Resources/SwiftGen/Localizable.swift</string>
 		<string>Resources/Configs/devConfig.xcconfig</string>
 		<string>Resources/Configs/releaseConfig.xcconfig</string>
+		<string>../Packages/GoodDependencies/Package.swift</string>
+		<string>../Packages/GoodDependencies/PackagePlaceholder.swift</string>
 	</array>
 	<key>Targets</key>
 	<array>
